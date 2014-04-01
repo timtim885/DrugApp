@@ -46,6 +46,8 @@
 -(void) setupAnswertext;
 -(void) changeView;
 
+-(Drug *) getAnswer:(NSString *)answer;
+
 
 
 @property (weak, nonatomic) IBOutlet UIButton *rightBut1;

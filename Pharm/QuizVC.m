@@ -327,4 +327,22 @@
     }
 
 }
+
+
+-(Drug *) getAnswer:(NSString *)answer{
+    if ([answer  isEqual: @"wrongAns1"])
+        return wrongAns1;
+    if ([answer isEqual:@"wrongAns2"])
+        return wrongAns2;
+    if ([answer isEqual:@"wrongAns3"])
+        return wrongAns3;
+    if ([answer isEqual:@"corrAns"])
+        return corrAns;
+    else{
+        return corrAns;
+    }
+}
+
+
+
 @end
