@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D1BD19DD-38A7-467C-899B-A66ADDEB1A4E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Pharm</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BF3BFBCB-1F26-4430-B617-79ACF46E146C</key>
+		<string>ssh://github.com/timtim885/DrugApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Pharm.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BF3BFBCB-1F26-4430-B617-79ACF46E146C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/timtim885/DrugApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BF3BFBCB-1F26-4430-B617-79ACF46E146C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BF3BFBCB-1F26-4430-B617-79ACF46E146C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Pharm</string>
+		</dict>
+	</array>
+</dict>
+</plist>
