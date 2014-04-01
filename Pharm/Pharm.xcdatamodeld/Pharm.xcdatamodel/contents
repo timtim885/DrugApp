@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Drug" syncable="YES">
+        <attribute name="beersList" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="blackBoxWarning" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="brandName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commonAdverseEffects" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commonPurpose" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dosing" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="genericName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="keyPoint" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="series" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="therapueticClass" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Drug" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>

@@ -1,0 +1,604 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		921E70C018D8BB4300F5134E /* FlashCards.m in Sources */ = {isa = PBXBuildFile; fileRef = 921E70BF18D8BB4300F5134E /* FlashCards.m */; };
+		922C1EA018D76E57002437F2 /* TherClassSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 922C1E9F18D76E57002437F2 /* TherClassSearchViewController.m */; };
+		9272ABCC18DB52C0004B4712 /* FlashcardsRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9272ABC718DB52C0004B4712 /* FlashcardsRootVC.m */; };
+		9272ABCD18DB52C0004B4712 /* FlashCardQuizVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9272ABC918DB52C0004B4712 /* FlashCardQuizVC.m */; };
+		9272ABCE18DB52C0004B4712 /* FlashCardListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9272ABCB18DB52C0004B4712 /* FlashCardListVC.m */; };
+		92A2D95D18C790BB00804F14 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A2D95C18C790BB00804F14 /* Foundation.framework */; };
+		92A2D95F18C790BB00804F14 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A2D95E18C790BB00804F14 /* CoreGraphics.framework */; };
+		92A2D96118C790BB00804F14 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A2D96018C790BB00804F14 /* UIKit.framework */; };
+		92A2D96318C790BB00804F14 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A2D96218C790BB00804F14 /* CoreData.framework */; };
+		92A2D96918C790BB00804F14 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92A2D96718C790BB00804F14 /* InfoPlist.strings */; };
+		92A2D96B18C790BB00804F14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D96A18C790BB00804F14 /* main.m */; };
+		92A2D96F18C790BB00804F14 /* DrugAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D96E18C790BB00804F14 /* DrugAppAppDelegate.m */; };
+		92A2D97218C790BB00804F14 /* Pharm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D97018C790BB00804F14 /* Pharm.xcdatamodeld */; };
+		92A2D97418C790BB00804F14 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92A2D97318C790BB00804F14 /* Images.xcassets */; };
+		92A2D97B18C790BB00804F14 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A2D97A18C790BB00804F14 /* XCTest.framework */; };
+		92A2D97C18C790BB00804F14 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A2D95C18C790BB00804F14 /* Foundation.framework */; };
+		92A2D97D18C790BB00804F14 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A2D96018C790BB00804F14 /* UIKit.framework */; };
+		92A2D97E18C790BB00804F14 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A2D96218C790BB00804F14 /* CoreData.framework */; };
+		92A2D98618C790BB00804F14 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92A2D98418C790BB00804F14 /* InfoPlist.strings */; };
+		92A2D98818C790BB00804F14 /* PharmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D98718C790BB00804F14 /* PharmTests.m */; };
+		92A2D99518C7910500804F14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A2D99418C7910500804F14 /* Main.storyboard */; };
+		92A2D99818C7915D00804F14 /* RootViewContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D99718C7915D00804F14 /* RootViewContoller.m */; };
+		92A2D99B18C7936200804F14 /* AddDrugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D99A18C7936200804F14 /* AddDrugViewController.m */; };
+		92A2D99E18C793D400804F14 /* DrugSearchTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D99D18C793D400804F14 /* DrugSearchTabBarController.m */; };
+		92A2D9A118C7942B00804F14 /* GenSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D9A018C7942B00804F14 /* GenSearchViewController.m */; };
+		92A2D9A418C7944C00804F14 /* BraSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D9A318C7944C00804F14 /* BraSearchViewController.m */; };
+		92A2D9A818C7950B00804F14 /* Drug.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D9A718C7950B00804F14 /* Drug.m */; };
+		92DF5EF518DB549600C31F87 /* QuizVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DF5EF418DB549600C31F87 /* QuizVC.m */; };
+		92DF5EF818DB54AE00C31F87 /* Scoring.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DF5EF718DB54AE00C31F87 /* Scoring.m */; };
+		92FF355218C7A5A90056D52B /* DrugDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF355118C7A5A90056D52B /* DrugDetailViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		92A2D97F18C790BB00804F14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92A2D95118C790BB00804F14 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92A2D95818C790BB00804F14;
+			remoteInfo = Pharm;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		921E70BE18D8BB4300F5134E /* FlashCards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashCards.h; sourceTree = "<group>"; };
+		921E70BF18D8BB4300F5134E /* FlashCards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashCards.m; sourceTree = "<group>"; };
+		922C1E9E18D76E57002437F2 /* TherClassSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TherClassSearchViewController.h; sourceTree = "<group>"; };
+		922C1E9F18D76E57002437F2 /* TherClassSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TherClassSearchViewController.m; sourceTree = "<group>"; };
+		9272ABC618DB52C0004B4712 /* FlashcardsRootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashcardsRootVC.h; sourceTree = "<group>"; };
+		9272ABC718DB52C0004B4712 /* FlashcardsRootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashcardsRootVC.m; sourceTree = "<group>"; };
+		9272ABC818DB52C0004B4712 /* FlashCardQuizVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashCardQuizVC.h; sourceTree = "<group>"; };
+		9272ABC918DB52C0004B4712 /* FlashCardQuizVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashCardQuizVC.m; sourceTree = "<group>"; };
+		9272ABCA18DB52C0004B4712 /* FlashCardListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashCardListVC.h; sourceTree = "<group>"; };
+		9272ABCB18DB52C0004B4712 /* FlashCardListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashCardListVC.m; sourceTree = "<group>"; };
+		92A2D95918C790BB00804F14 /* Pharm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pharm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92A2D95C18C790BB00804F14 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		92A2D95E18C790BB00804F14 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		92A2D96018C790BB00804F14 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		92A2D96218C790BB00804F14 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		92A2D96618C790BB00804F14 /* Pharm-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pharm-Info.plist"; sourceTree = "<group>"; };
+		92A2D96818C790BB00804F14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		92A2D96A18C790BB00804F14 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		92A2D96C18C790BB00804F14 /* Pharm-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pharm-Prefix.pch"; sourceTree = "<group>"; };
+		92A2D96D18C790BB00804F14 /* DrugAppAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrugAppAppDelegate.h; sourceTree = "<group>"; };
+		92A2D96E18C790BB00804F14 /* DrugAppAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrugAppAppDelegate.m; sourceTree = "<group>"; };
+		92A2D97118C790BB00804F14 /* Pharm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pharm.xcdatamodel; sourceTree = "<group>"; };
+		92A2D97318C790BB00804F14 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		92A2D97918C790BB00804F14 /* PharmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PharmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		92A2D97A18C790BB00804F14 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		92A2D98318C790BB00804F14 /* PharmTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PharmTests-Info.plist"; sourceTree = "<group>"; };
+		92A2D98518C790BB00804F14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		92A2D98718C790BB00804F14 /* PharmTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PharmTests.m; sourceTree = "<group>"; };
+		92A2D99418C7910500804F14 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		92A2D99618C7915D00804F14 /* RootViewContoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewContoller.h; sourceTree = "<group>"; };
+		92A2D99718C7915D00804F14 /* RootViewContoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewContoller.m; sourceTree = "<group>"; };
+		92A2D99918C7936200804F14 /* AddDrugViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDrugViewController.h; sourceTree = "<group>"; };
+		92A2D99A18C7936200804F14 /* AddDrugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDrugViewController.m; sourceTree = "<group>"; };
+		92A2D99C18C793D400804F14 /* DrugSearchTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrugSearchTabBarController.h; sourceTree = "<group>"; };
+		92A2D99D18C793D400804F14 /* DrugSearchTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrugSearchTabBarController.m; sourceTree = "<group>"; };
+		92A2D99F18C7942B00804F14 /* GenSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenSearchViewController.h; sourceTree = "<group>"; };
+		92A2D9A018C7942B00804F14 /* GenSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenSearchViewController.m; sourceTree = "<group>"; };
+		92A2D9A218C7944C00804F14 /* BraSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BraSearchViewController.h; sourceTree = "<group>"; };
+		92A2D9A318C7944C00804F14 /* BraSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BraSearchViewController.m; sourceTree = "<group>"; };
+		92A2D9A618C7950B00804F14 /* Drug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drug.h; sourceTree = "<group>"; };
+		92A2D9A718C7950B00804F14 /* Drug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Drug.m; sourceTree = "<group>"; };
+		92DF5EF318DB549600C31F87 /* QuizVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizVC.h; sourceTree = "<group>"; };
+		92DF5EF418DB549600C31F87 /* QuizVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizVC.m; sourceTree = "<group>"; };
+		92DF5EF618DB54AE00C31F87 /* Scoring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scoring.h; sourceTree = "<group>"; };
+		92DF5EF718DB54AE00C31F87 /* Scoring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scoring.m; sourceTree = "<group>"; };
+		92FF355018C7A5A90056D52B /* DrugDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrugDetailViewController.h; sourceTree = "<group>"; };
+		92FF355118C7A5A90056D52B /* DrugDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrugDetailViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		92A2D95618C790BB00804F14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92A2D95F18C790BB00804F14 /* CoreGraphics.framework in Frameworks */,
+				92A2D96318C790BB00804F14 /* CoreData.framework in Frameworks */,
+				92A2D96118C790BB00804F14 /* UIKit.framework in Frameworks */,
+				92A2D95D18C790BB00804F14 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92A2D97618C790BB00804F14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92A2D97B18C790BB00804F14 /* XCTest.framework in Frameworks */,
+				92A2D97E18C790BB00804F14 /* CoreData.framework in Frameworks */,
+				92A2D97D18C790BB00804F14 /* UIKit.framework in Frameworks */,
+				92A2D97C18C790BB00804F14 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		92A2D95018C790BB00804F14 = {
+			isa = PBXGroup;
+			children = (
+				92A2D96418C790BB00804F14 /* Pharm */,
+				92A2D98118C790BB00804F14 /* PharmTests */,
+				92A2D95B18C790BB00804F14 /* Frameworks */,
+				92A2D95A18C790BB00804F14 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		92A2D95A18C790BB00804F14 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92A2D95918C790BB00804F14 /* Pharm.app */,
+				92A2D97918C790BB00804F14 /* PharmTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92A2D95B18C790BB00804F14 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92A2D95C18C790BB00804F14 /* Foundation.framework */,
+				92A2D95E18C790BB00804F14 /* CoreGraphics.framework */,
+				92A2D96018C790BB00804F14 /* UIKit.framework */,
+				92A2D96218C790BB00804F14 /* CoreData.framework */,
+				92A2D97A18C790BB00804F14 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92A2D96418C790BB00804F14 /* Pharm */ = {
+			isa = PBXGroup;
+			children = (
+				92A2D9A518C794F700804F14 /* Models */,
+				92A2D99318C790F100804F14 /* View Controllers */,
+				92A2D99218C790E100804F14 /* Data */,
+				92A2D99118C790C900804F14 /* AppDelegate */,
+				92A2D97318C790BB00804F14 /* Images.xcassets */,
+				92A2D96518C790BB00804F14 /* Supporting Files */,
+			);
+			path = Pharm;
+			sourceTree = "<group>";
+		};
+		92A2D96518C790BB00804F14 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				92A2D96618C790BB00804F14 /* Pharm-Info.plist */,
+				92A2D96718C790BB00804F14 /* InfoPlist.strings */,
+				92A2D96A18C790BB00804F14 /* main.m */,
+				92A2D96C18C790BB00804F14 /* Pharm-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		92A2D98118C790BB00804F14 /* PharmTests */ = {
+			isa = PBXGroup;
+			children = (
+				92A2D98718C790BB00804F14 /* PharmTests.m */,
+				92A2D98218C790BB00804F14 /* Supporting Files */,
+			);
+			path = PharmTests;
+			sourceTree = "<group>";
+		};
+		92A2D98218C790BB00804F14 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				92A2D98318C790BB00804F14 /* PharmTests-Info.plist */,
+				92A2D98418C790BB00804F14 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		92A2D99118C790C900804F14 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				92A2D96D18C790BB00804F14 /* DrugAppAppDelegate.h */,
+				92A2D96E18C790BB00804F14 /* DrugAppAppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		92A2D99218C790E100804F14 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				92A2D97018C790BB00804F14 /* Pharm.xcdatamodeld */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		92A2D99318C790F100804F14 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				92DF5EF318DB549600C31F87 /* QuizVC.h */,
+				92DF5EF418DB549600C31F87 /* QuizVC.m */,
+				9272ABC618DB52C0004B4712 /* FlashcardsRootVC.h */,
+				9272ABC718DB52C0004B4712 /* FlashcardsRootVC.m */,
+				9272ABC818DB52C0004B4712 /* FlashCardQuizVC.h */,
+				9272ABC918DB52C0004B4712 /* FlashCardQuizVC.m */,
+				9272ABCA18DB52C0004B4712 /* FlashCardListVC.h */,
+				9272ABCB18DB52C0004B4712 /* FlashCardListVC.m */,
+				92A2D99418C7910500804F14 /* Main.storyboard */,
+				922C1E9E18D76E57002437F2 /* TherClassSearchViewController.h */,
+				922C1E9F18D76E57002437F2 /* TherClassSearchViewController.m */,
+				92A2D9A218C7944C00804F14 /* BraSearchViewController.h */,
+				92A2D9A318C7944C00804F14 /* BraSearchViewController.m */,
+				92A2D99F18C7942B00804F14 /* GenSearchViewController.h */,
+				92A2D9A018C7942B00804F14 /* GenSearchViewController.m */,
+				92A2D99C18C793D400804F14 /* DrugSearchTabBarController.h */,
+				92A2D99D18C793D400804F14 /* DrugSearchTabBarController.m */,
+				92A2D99618C7915D00804F14 /* RootViewContoller.h */,
+				92A2D99718C7915D00804F14 /* RootViewContoller.m */,
+				92A2D99918C7936200804F14 /* AddDrugViewController.h */,
+				92A2D99A18C7936200804F14 /* AddDrugViewController.m */,
+				92FF355018C7A5A90056D52B /* DrugDetailViewController.h */,
+				92FF355118C7A5A90056D52B /* DrugDetailViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		92A2D9A518C794F700804F14 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				92DF5EF618DB54AE00C31F87 /* Scoring.h */,
+				92DF5EF718DB54AE00C31F87 /* Scoring.m */,
+				92A2D9A618C7950B00804F14 /* Drug.h */,
+				92A2D9A718C7950B00804F14 /* Drug.m */,
+				921E70BE18D8BB4300F5134E /* FlashCards.h */,
+				921E70BF18D8BB4300F5134E /* FlashCards.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		92A2D95818C790BB00804F14 /* Pharm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92A2D98B18C790BB00804F14 /* Build configuration list for PBXNativeTarget "Pharm" */;
+			buildPhases = (
+				92A2D95518C790BB00804F14 /* Sources */,
+				92A2D95618C790BB00804F14 /* Frameworks */,
+				92A2D95718C790BB00804F14 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pharm;
+			productName = Pharm;
+			productReference = 92A2D95918C790BB00804F14 /* Pharm.app */;
+			productType = "com.apple.product-type.application";
+		};
+		92A2D97818C790BB00804F14 /* PharmTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92A2D98E18C790BB00804F14 /* Build configuration list for PBXNativeTarget "PharmTests" */;
+			buildPhases = (
+				92A2D97518C790BB00804F14 /* Sources */,
+				92A2D97618C790BB00804F14 /* Frameworks */,
+				92A2D97718C790BB00804F14 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				92A2D98018C790BB00804F14 /* PBXTargetDependency */,
+			);
+			name = PharmTests;
+			productName = PharmTests;
+			productReference = 92A2D97918C790BB00804F14 /* PharmTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		92A2D95118C790BB00804F14 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DrugApp;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = UOP;
+				TargetAttributes = {
+					92A2D97818C790BB00804F14 = {
+						TestTargetID = 92A2D95818C790BB00804F14;
+					};
+				};
+			};
+			buildConfigurationList = 92A2D95418C790BB00804F14 /* Build configuration list for PBXProject "Pharm" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 92A2D95018C790BB00804F14;
+			productRefGroup = 92A2D95A18C790BB00804F14 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				92A2D95818C790BB00804F14 /* Pharm */,
+				92A2D97818C790BB00804F14 /* PharmTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		92A2D95718C790BB00804F14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92A2D99518C7910500804F14 /* Main.storyboard in Resources */,
+				92A2D96918C790BB00804F14 /* InfoPlist.strings in Resources */,
+				92A2D97418C790BB00804F14 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92A2D97718C790BB00804F14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92A2D98618C790BB00804F14 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		92A2D95518C790BB00804F14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				922C1EA018D76E57002437F2 /* TherClassSearchViewController.m in Sources */,
+				92A2D96F18C790BB00804F14 /* DrugAppAppDelegate.m in Sources */,
+				92DF5EF518DB549600C31F87 /* QuizVC.m in Sources */,
+				9272ABCE18DB52C0004B4712 /* FlashCardListVC.m in Sources */,
+				92A2D9A818C7950B00804F14 /* Drug.m in Sources */,
+				92A2D96B18C790BB00804F14 /* main.m in Sources */,
+				92A2D97218C790BB00804F14 /* Pharm.xcdatamodeld in Sources */,
+				92A2D9A118C7942B00804F14 /* GenSearchViewController.m in Sources */,
+				9272ABCD18DB52C0004B4712 /* FlashCardQuizVC.m in Sources */,
+				921E70C018D8BB4300F5134E /* FlashCards.m in Sources */,
+				92FF355218C7A5A90056D52B /* DrugDetailViewController.m in Sources */,
+				92A2D99818C7915D00804F14 /* RootViewContoller.m in Sources */,
+				92A2D99B18C7936200804F14 /* AddDrugViewController.m in Sources */,
+				92A2D9A418C7944C00804F14 /* BraSearchViewController.m in Sources */,
+				92DF5EF818DB54AE00C31F87 /* Scoring.m in Sources */,
+				9272ABCC18DB52C0004B4712 /* FlashcardsRootVC.m in Sources */,
+				92A2D99E18C793D400804F14 /* DrugSearchTabBarController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92A2D97518C790BB00804F14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92A2D98818C790BB00804F14 /* PharmTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		92A2D98018C790BB00804F14 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92A2D95818C790BB00804F14 /* Pharm */;
+			targetProxy = 92A2D97F18C790BB00804F14 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		92A2D96718C790BB00804F14 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92A2D96818C790BB00804F14 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		92A2D98418C790BB00804F14 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92A2D98518C790BB00804F14 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		92A2D98918C790BB00804F14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		92A2D98A18C790BB00804F14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		92A2D98C18C790BB00804F14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pharm/Pharm-Prefix.pch";
+				INFOPLIST_FILE = "Pharm/Pharm-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		92A2D98D18C790BB00804F14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pharm/Pharm-Prefix.pch";
+				INFOPLIST_FILE = "Pharm/Pharm-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		92A2D98F18C790BB00804F14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pharm.app/Pharm";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pharm/Pharm-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PharmTests/PharmTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		92A2D99018C790BB00804F14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Pharm.app/Pharm";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pharm/Pharm-Prefix.pch";
+				INFOPLIST_FILE = "PharmTests/PharmTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		92A2D95418C790BB00804F14 /* Build configuration list for PBXProject "Pharm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92A2D98918C790BB00804F14 /* Debug */,
+				92A2D98A18C790BB00804F14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92A2D98B18C790BB00804F14 /* Build configuration list for PBXNativeTarget "Pharm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92A2D98C18C790BB00804F14 /* Debug */,
+				92A2D98D18C790BB00804F14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92A2D98E18C790BB00804F14 /* Build configuration list for PBXNativeTarget "PharmTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92A2D98F18C790BB00804F14 /* Debug */,
+				92A2D99018C790BB00804F14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		92A2D97018C790BB00804F14 /* Pharm.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				92A2D97118C790BB00804F14 /* Pharm.xcdatamodel */,
+			);
+			currentVersion = 92A2D97118C790BB00804F14 /* Pharm.xcdatamodel */;
+			path = Pharm.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 92A2D95118C790BB00804F14 /* Project object */;
+}
