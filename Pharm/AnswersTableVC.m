@@ -28,7 +28,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog (@"%@", passedQuestion);
     [self changeView];
     
     
@@ -41,7 +40,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     
-    [self changeView];
+    //[self changeView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -136,6 +135,7 @@
 }
 
 -(void)changeView{
+    NSLog(@"ChangeView ran with value %@", passedQuestion);
     [rightBut1 setHidden:YES];
     [rightBut2 setHidden:YES];
     [rightBut3 setHidden:YES];
@@ -187,6 +187,8 @@
         [rightBut4 setHidden:NO];
         rightAns = ans4;
     }
+    
+    NSLog(@"%@", rightAns.text);
 }
 
 @end

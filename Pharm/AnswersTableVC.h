@@ -6,16 +6,17 @@
 //  Copyright (c) 2014 UOP. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "Drug.h"
-#import "Question.h"
-
 @protocol answerTableDelegate <NSObject>
 
 -(void)wrongAnswer;
 -(void)rightAnswer;
 
 @end
+
+#import <UIKit/UIKit.h>
+#import "Drug.h"
+#import "Question.h"
+#import "QuizVC.h"
 
 
 @interface AnswersTableVC : UITableViewController

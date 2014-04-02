@@ -90,11 +90,11 @@
 
 - (void)viewDidLoad
 {
-    
     [super viewDidLoad];
-    [self makeQuestion];
+    //[self makeQuestion];
     [totalQs setText:[NSString stringWithFormat:@"%ld", [quizScore totalQsAns]]];
     [totalCorr setText: [NSString stringWithFormat:@"%ld", [quizScore totalCorrAns]]];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -105,8 +105,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self makeQuestion];
-
+    //[self makeQuestion];
     
 }
 
@@ -159,9 +158,13 @@
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    [self makeQuestion];
     if ([segue.identifier isEqualToString:@"ansTableSegue"]){
-        AnswersTableVC *embed = (AnswersTableVC *)segue.destinationViewController;
+        AnswersTableVC *embed = segue.destinationViewController;
         embed.passedQuestion = nextQuestion;
+        //segue.destinationViewController setPassedQuestion:self.nextQuestion];
+
+        
     }
 }
 
