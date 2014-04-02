@@ -38,6 +38,7 @@
 		92DF5EF518DB549600C31F87 /* QuizVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DF5EF418DB549600C31F87 /* QuizVC.m */; };
 		92DF5EF818DB54AE00C31F87 /* Scoring.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DF5EF718DB54AE00C31F87 /* Scoring.m */; };
 		92FF355218C7A5A90056D52B /* DrugDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF355118C7A5A90056D52B /* DrugDetailViewController.m */; };
+		A69A905218EB9B8D00E69EF3 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = A69A905118EB9B8D00E69EF3 /* Question.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,8 @@
 		92DF5EF718DB54AE00C31F87 /* Scoring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scoring.m; sourceTree = "<group>"; };
 		92FF355018C7A5A90056D52B /* DrugDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrugDetailViewController.h; sourceTree = "<group>"; };
 		92FF355118C7A5A90056D52B /* DrugDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrugDetailViewController.m; sourceTree = "<group>"; };
+		A69A905018EB9B8D00E69EF3 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		A69A905118EB9B8D00E69EF3 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +256,8 @@
 		92A2D9A518C794F700804F14 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A69A905018EB9B8D00E69EF3 /* Question.h */,
+				A69A905118EB9B8D00E69EF3 /* Question.m */,
 				92DF5EF618DB54AE00C31F87 /* Scoring.h */,
 				92DF5EF718DB54AE00C31F87 /* Scoring.m */,
 				92A2D9A618C7950B00804F14 /* Drug.h */,
@@ -367,6 +372,7 @@
 				92A2D9A818C7950B00804F14 /* Drug.m in Sources */,
 				92A2D96B18C790BB00804F14 /* main.m in Sources */,
 				92A2D97218C790BB00804F14 /* Pharm.xcdatamodeld in Sources */,
+				A69A905218EB9B8D00E69EF3 /* Question.m in Sources */,
 				92A2D9A118C7942B00804F14 /* GenSearchViewController.m in Sources */,
 				9272ABCD18DB52C0004B4712 /* FlashCardQuizVC.m in Sources */,
 				921E70C018D8BB4300F5134E /* FlashCards.m in Sources */,
