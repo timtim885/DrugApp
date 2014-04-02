@@ -14,7 +14,9 @@
 
 @implementation AnswersTableVC
 
-@synthesize passedQuestion, delegate, rightAns, rightBut1, rightBut2, rightBut3, rightBut4, wrongBut1,wrongBut2, wrongBut3, wrongBut4, ans1, ans2, ans3, ans4;
+@synthesize passedQuestion, rightAns, delegate;
+
+/*rightBut1=_rightBut1, rightBut2=_rightBut2, rightBut3=_rightBut3, rightBut4=_rightBut4, wrongBut1=_wrongBu,wrongBut2=wrongBut2, wrongBut3, wrongBut4, ans1, ans2, ans3, ans4;*/
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -27,8 +29,9 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
     [self changeView];
+    [super viewDidLoad];
+    
     
     
     // Uncomment the following line to preserve selection between presentations.
@@ -40,7 +43,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     
-    //[self changeView];
+    [self changeView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -127,65 +130,65 @@
 
 - (IBAction)wrongAnsBut:(id)sender {
     [UIView animateWithDuration:0.25 delay:0.0 options:(UIViewAnimationOptionAutoreverse) animations:^{rightAns.textColor = [UIColor redColor];}completion:nil];
-    [[self delegate] wrongAnswer];
+    //[[self delegate] wrongAnswer];
 }
 
 - (IBAction)rightAnsBut:(id)sender {
-    [[self delegate] rightAnswer];
+    //[[self delegate] rightAnswer];
 }
 
 -(void)changeView{
     NSLog(@"ChangeView ran with value %@", passedQuestion);
-    [rightBut1 setHidden:YES];
-    [rightBut2 setHidden:YES];
-    [rightBut3 setHidden:YES];
-    [rightBut4 setHidden:YES];
-    [wrongBut1 setHidden:YES];
-    [wrongBut2 setHidden:YES];
-    [wrongBut3 setHidden:YES];
-    [wrongBut4 setHidden:YES];
+    [_rightBut1 setHidden:YES];
+    [_rightBut2 setHidden:YES];
+    [_rightBut3 setHidden:YES];
+    [_rightBut4 setHidden:YES];
+    [_wrongBut1 setHidden:YES];
+    [_wrongBut2 setHidden:YES];
+    [_wrongBut3 setHidden:YES];
+    [_wrongBut4 setHidden:YES];
     rightAns = nil;
     int corrAnsLocation = arc4random()% 4;
     if (corrAnsLocation == 0) {
-        ans1.text = [passedQuestion rightAnstxt];
-        ans2.text = [passedQuestion wrongAnstxt1];
-        ans3.text = [passedQuestion wrongAnstxt2];
-        ans4.text = [passedQuestion wrongAnstxt3];
-        [rightBut1 setHidden:NO];
-        [wrongBut2 setHidden:NO];
-        [wrongBut3 setHidden:NO];
-        [wrongBut4 setHidden:NO];
-        rightAns = ans1;
+        _ans1.text = [passedQuestion rightAnstxt];
+        _ans2.text = [passedQuestion wrongAnstxt1];
+        _ans3.text = [passedQuestion wrongAnstxt2];
+        _ans4.text = [passedQuestion wrongAnstxt3];
+        [_rightBut1 setHidden:NO];
+        [_wrongBut2 setHidden:NO];
+        [_wrongBut3 setHidden:NO];
+        [_wrongBut4 setHidden:NO];
+        rightAns = _ans1;
     }else if(corrAnsLocation == 1){
-        ans1.text = [passedQuestion wrongAnstxt1];
-        ans2.text = [passedQuestion rightAnstxt];
-        ans3.text = [passedQuestion wrongAnstxt2];
-        ans4.text = [passedQuestion wrongAnstxt3];
-        [wrongBut1 setHidden:NO];
-        [rightBut2 setHidden:NO];
-        [wrongBut3 setHidden:NO];
-        [wrongBut4 setHidden:NO];
-        rightAns = ans2;
+        _ans1.text = [passedQuestion wrongAnstxt1];
+        _ans2.text = [passedQuestion rightAnstxt];
+        _ans3.text = [passedQuestion wrongAnstxt2];
+        _ans4.text = [passedQuestion wrongAnstxt3];
+        [_wrongBut1 setHidden:NO];
+        [_rightBut2 setHidden:NO];
+        [_wrongBut3 setHidden:NO];
+        [_wrongBut4 setHidden:NO];
+        rightAns = _ans2;
     }else if(corrAnsLocation == 2){
-        ans1.text = [passedQuestion wrongAnstxt1];
-        ans2.text = [passedQuestion wrongAnstxt2];
-        ans3.text = [passedQuestion rightAnstxt];
-        ans4.text = [passedQuestion wrongAnstxt3];
-        [wrongBut1 setHidden:NO];
-        [wrongBut2 setHidden:NO];
-        [rightBut3 setHidden:NO];
-        [wrongBut4 setHidden:NO];
-        rightAns = ans3;
+        _ans1.text = [passedQuestion wrongAnstxt1];
+        _ans2.text = [passedQuestion wrongAnstxt2];
+        _ans3.text = [passedQuestion rightAnstxt];
+        _ans4.text = [passedQuestion wrongAnstxt3];
+        [_wrongBut1 setHidden:NO];
+        [_wrongBut2 setHidden:NO];
+        [_rightBut3 setHidden:NO];
+        [_wrongBut4 setHidden:NO];
+        rightAns = _ans3;
     }else if(corrAnsLocation == 3){
-        ans1.text = [passedQuestion wrongAnstxt1];
-        ans2.text = [passedQuestion wrongAnstxt2];
-        ans3.text = [passedQuestion wrongAnstxt3];
-        ans4.text = [passedQuestion rightAnstxt];
-        [wrongBut1 setHidden:NO];
-        [wrongBut2 setHidden:NO];
-        [wrongBut3 setHidden:NO];
-        [rightBut4 setHidden:NO];
-        rightAns = ans4;
+        _ans1.text = [passedQuestion wrongAnstxt1];
+        _ans2.text = [passedQuestion wrongAnstxt2];
+        _ans3.text = [passedQuestion wrongAnstxt3];
+        _ans4.text = [passedQuestion rightAnstxt];
+        [_wrongBut1 setHidden:NO];
+        [_wrongBut2 setHidden:NO];
+        [_wrongBut3 setHidden:NO];
+        [_rightBut4 setHidden:NO];
+        rightAns = _ans4;
     }
     
     NSLog(@"%@", rightAns.text);
