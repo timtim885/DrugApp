@@ -16,14 +16,15 @@
 @implementation QuizVC
 
 
-@synthesize rightAns, ans1, ans2, ans3, ans4, nextQuestion, questionLbl;
+//@synthesize rightAns, ans1, ans2, ans3, ans4,
+@synthesize nextQuestion, questionLbl;
 
 @synthesize quizScore;
 @synthesize totalCorr;
 @synthesize totalQs;
 
 
--(void)changeView{
+/*-(void)changeView{
     [_rightBut1 setHidden:YES];
     [_rightBut2 setHidden:YES];
     [_rightBut3 setHidden:YES];
@@ -75,7 +76,7 @@
         [_rightBut4 setHidden:NO];
         rightAns = ans4;
     }
-}
+}*/
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -109,7 +110,7 @@
     
 }
 
-- (IBAction)wrongAnsButton:(id)sender {
+/*- (IBAction)wrongAnsButton:(id)sender {
     [nextQuestion selectedWrongAns];
     [totalQs setText:[NSString stringWithFormat:@"%ld", [quizScore totalQsAns]]];
     [totalCorr setText: [NSString stringWithFormat:@"%ld", [quizScore totalCorrAns]]];
@@ -144,7 +145,7 @@
         [navController pushViewController:quizNextVC animated:YES];
     }
 
-}
+}*/
 
 -(void)makeQuestion{
     nextQuestion = [[Question alloc] init];
@@ -153,7 +154,54 @@
     }
     [nextQuestion selectObjAnswers];
     questionLbl.text = [nextQuestion questionText];
-    [self changeView];
+}
+
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"ansTableSegue"]){
+        AnswersTableVC *embed = (AnswersTableVC *)segue.destinationViewController;
+        embed.passedQuestion = nextQuestion;
+    }
+}
+
+
+#pragma answerTableDelegate methods
+
+-(void)wrongAnswer {
+    [nextQuestion selectedWrongAns];
+    [totalQs setText:[NSString stringWithFormat:@"%ld", [quizScore totalQsAns]]];
+    [totalCorr setText: [NSString stringWithFormat:@"%ld", [quizScore totalCorrAns]]];
+}
+
+- (void)rightAnswer{
+    if ([nextQuestion wrongAnsSelected] == YES) {
+        [quizScore totalAns];
+        [totalQs setText:[NSString stringWithFormat:@"%ld", [quizScore totalQsAns]]];
+        [totalCorr setText: [NSString stringWithFormat:@"%ld", [quizScore totalCorrAns]]];
+        //NSLog(@"Right answer!");
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        QuizVC *quizNextVC = [storyboard instantiateViewControllerWithIdentifier:@"QuizVCon"];
+        
+        [quizNextVC setQuizScore:self.quizScore];
+        UINavigationController *navController = self.navigationController;
+        [navController popViewControllerAnimated:NO];
+        [navController pushViewController:quizNextVC animated:YES];
+    }else{
+        [quizScore rightAns];
+        [quizScore totalAns];
+        [totalQs setText:[NSString stringWithFormat:@"%ld", [quizScore totalQsAns]]];
+        [totalCorr setText: [NSString stringWithFormat:@"%ld", [quizScore totalCorrAns]]];
+        //NSLog(@"Right answer!");
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        QuizVC *quizNextVC = [storyboard instantiateViewControllerWithIdentifier:@"QuizVCon"];
+        [quizNextVC setQuizScore:self.quizScore];
+        UINavigationController *navController = self.navigationController;
+        
+        [navController popViewControllerAnimated:NO];
+        [navController pushViewController:quizNextVC animated:YES];
+    }
+    
 }
 
 
