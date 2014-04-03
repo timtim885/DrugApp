@@ -138,7 +138,6 @@
 }
 
 -(void)changeView{
-    NSLog(@"ChangeView ran with value %@", passedQuestion);
     [_rightBut1 setHidden:YES];
     [_rightBut2 setHidden:YES];
     [_rightBut3 setHidden:YES];
@@ -191,7 +190,6 @@
         rightAns = _ans4;
     }
     
-    NSLog(@"%@", rightAns.text);
 }
 
 @end

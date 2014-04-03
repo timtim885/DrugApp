@@ -15,6 +15,10 @@
 
 @implementation FlashCardQuizVC
 
+@synthesize swipeRightRecognizer = _swipeRightRecognizer;
+@synthesize swipeLeftRecognizer = _swipeLeftRecognizer;
+@synthesize selectedCard, frontCard, backCard, currentView, otherview;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,11 +30,12 @@
 
 - (void)viewDidLoad
 {
-
-    flashCardsList = [[FlashCards alloc]init];
-    [flashCardsList cycleCards];
-    _genericName.text = [flashCardsList selectedCard].genericName;
-    _brandName.text = [flashCardsList selectedCard].brandName;
+    cardDidFlip = NO;
+    UISwipeGestureRecognizer *swipeRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipeHandle:)];
+    swipeRightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    [swipeRightRecognizer setNumberOfTouchesRequired:1];
+    [self.view addGestureRecognizer:swipeRightRecognizer];
+    [self setViews];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -43,12 +48,55 @@
 
 
 -(IBAction)nextCard:(id)sender{
-    [flashCardsList cycleCards];
-    _genericName.text = [flashCardsList selectedCard].genericName;
-    _brandName.text = [flashCardsList selectedCard].brandName;
+    [self goToNextCard];
     
 }
 
+-(void)goToNextCard{
+    [flashCardsList cycleCards];
+    [self setViews];
+}
+
+-(void)setViews{
+    _genericName.text = selectedCard.genericName;
+    _brandName.text = selectedCard.brandName;
+    _therapueticClass.text = selectedCard.therapueticClass;
+}
+
+
+-(void)rightSwipeHandle:(UISwipeGestureRecognizer *)gestureRecognizer{
+    cardDidFlip = YES;
+    [UIView transitionFromView:frontCard toView:backCard duration:1.0 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL inFinished){
+        _swipeRightRecognizer = nil;
+        UISwipeGestureRecognizer *swipeLeftRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipeHandle:)];
+        swipeLeftRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+        [swipeLeftRecognizer setNumberOfTouchesRequired:1];
+        [self.view addGestureRecognizer:swipeLeftRecognizer];
+    }];
+}
+
+-(void)leftSwipeHandle:(UISwipeGestureRecognizer *)gestureRecognizer{
+    [UIView transitionFromView:frontCard toView:backCard duration:1.0 options:UIViewAnimationOptionTransitionFlipFromLeft completion:^(BOOL inFinished){
+        _swipeLeftRecognizer = nil;
+        UISwipeGestureRecognizer *swipeRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipeHandle:)];
+        swipeRightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+        [swipeRightRecognizer setNumberOfTouchesRequired:1];
+        [self.view addGestureRecognizer:swipeRightRecognizer];
+    }];
+}
+
+/*-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"flashCardSegue"]){
+        if (!flashCardsList){
+            flashCardsList = [[FlashCards alloc]init];
+        }
+        [flashCardsList cycleCards];
+        _frontCard = segue.destinationViewController;
+            //[frontCard setDelegate:self];
+        _frontCard.passedCard = [flashCardsList selectedCard];
+            //segue.destinationViewController setPassedQuestion:self.nextQuestion];
+    }
+}*/
     
 /*UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 FlashCardQuizVC *fcNextVC = [storyboard instantiateViewControllerWithIdentifier:@"FlashcardQuiz"];

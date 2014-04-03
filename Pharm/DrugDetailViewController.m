@@ -97,7 +97,6 @@
         [fcAlert show];
         
     }
-    NSLog(@"%@", flashCard);
     
 }
 
