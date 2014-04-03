@@ -1,22 +1,18 @@
 //
-//  AnswersTableVC.m
+//  testTableView.m
 //  Pharm
 //
-//  Created by PHSIT on 4/1/14.
+//  Created by PHSIT on 4/2/14.
 //  Copyright (c) 2014 UOP. All rights reserved.
 //
 
-#import "AnswersTableVC.h"
+#import "testTableView.h"
 
-@interface AnswersTableVC ()
+@interface testTableView ()
 
 @end
 
-@implementation AnswersTableVC
-
-@synthesize passedQuestion, rightAns, delegate;
-
-/*rightBut1=_rightBut1, rightBut2=_rightBut2, rightBut3=_rightBut3, rightBut4=_rightBut4, wrongBut1=_wrongBu,wrongBut2=wrongBut2, wrongBut3, wrongBut4, ans1, ans2, ans3, ans4;*/
+@implementation testTableView
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -29,21 +25,13 @@
 
 - (void)viewDidLoad
 {
-    [self changeView];
     [super viewDidLoad];
-    
-    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    
-    [self changeView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,14 +46,14 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 4;
+    return 0;
 }
 
 /*
@@ -127,71 +115,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (IBAction)wrongAnsBut:(id)sender {
-    [UIView animateWithDuration:0.25 delay:0.0 options:(UIViewAnimationOptionAutoreverse) animations:^{rightAns.textColor = [UIColor redColor];}completion:nil];
-    [[self delegate] wrongAnswer];
-}
-
-- (IBAction)rightAnsBut:(id)sender {
-    [[self delegate] rightAnswer];
-}
-
--(void)changeView{
-    NSLog(@"ChangeView ran with value %@", passedQuestion);
-    [_rightBut1 setHidden:YES];
-    [_rightBut2 setHidden:YES];
-    [_rightBut3 setHidden:YES];
-    [_rightBut4 setHidden:YES];
-    [_wrongBut1 setHidden:YES];
-    [_wrongBut2 setHidden:YES];
-    [_wrongBut3 setHidden:YES];
-    [_wrongBut4 setHidden:YES];
-    rightAns = nil;
-    int corrAnsLocation = arc4random()% 4;
-    if (corrAnsLocation == 0) {
-        _ans1.text = [passedQuestion rightAnstxt];
-        _ans2.text = [passedQuestion wrongAnstxt1];
-        _ans3.text = [passedQuestion wrongAnstxt2];
-        _ans4.text = [passedQuestion wrongAnstxt3];
-        [_rightBut1 setHidden:NO];
-        [_wrongBut2 setHidden:NO];
-        [_wrongBut3 setHidden:NO];
-        [_wrongBut4 setHidden:NO];
-        rightAns = _ans1;
-    }else if(corrAnsLocation == 1){
-        _ans1.text = [passedQuestion wrongAnstxt1];
-        _ans2.text = [passedQuestion rightAnstxt];
-        _ans3.text = [passedQuestion wrongAnstxt2];
-        _ans4.text = [passedQuestion wrongAnstxt3];
-        [_wrongBut1 setHidden:NO];
-        [_rightBut2 setHidden:NO];
-        [_wrongBut3 setHidden:NO];
-        [_wrongBut4 setHidden:NO];
-        rightAns = _ans2;
-    }else if(corrAnsLocation == 2){
-        _ans1.text = [passedQuestion wrongAnstxt1];
-        _ans2.text = [passedQuestion wrongAnstxt2];
-        _ans3.text = [passedQuestion rightAnstxt];
-        _ans4.text = [passedQuestion wrongAnstxt3];
-        [_wrongBut1 setHidden:NO];
-        [_wrongBut2 setHidden:NO];
-        [_rightBut3 setHidden:NO];
-        [_wrongBut4 setHidden:NO];
-        rightAns = _ans3;
-    }else if(corrAnsLocation == 3){
-        _ans1.text = [passedQuestion wrongAnstxt1];
-        _ans2.text = [passedQuestion wrongAnstxt2];
-        _ans3.text = [passedQuestion wrongAnstxt3];
-        _ans4.text = [passedQuestion rightAnstxt];
-        [_wrongBut1 setHidden:NO];
-        [_wrongBut2 setHidden:NO];
-        [_wrongBut3 setHidden:NO];
-        [_rightBut4 setHidden:NO];
-        rightAns = _ans4;
-    }
-    
-    NSLog(@"%@", rightAns.text);
-}
 
 @end

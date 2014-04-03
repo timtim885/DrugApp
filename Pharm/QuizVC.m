@@ -161,6 +161,7 @@
     [self makeQuestion];
     if ([segue.identifier isEqualToString:@"ansTableSegue"]){
         AnswersTableVC *embed = segue.destinationViewController;
+        [embed setDelegate:self];
         embed.passedQuestion = nextQuestion;
         //segue.destinationViewController setPassedQuestion:self.nextQuestion];
 
