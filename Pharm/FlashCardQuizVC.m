@@ -8,6 +8,8 @@
 
 #import "FlashCardQuizVC.h"
 #import "FlashCards.h"
+#import "FlashCardBackVC.h"
+#import "FlashCardFrontVC.h"
 
 @interface FlashCardQuizVC ()
 
@@ -15,9 +17,8 @@
 
 @implementation FlashCardQuizVC
 
-@synthesize swipeRightRecognizer = _swipeRightRecognizer;
-@synthesize swipeLeftRecognizer = _swipeLeftRecognizer;
-@synthesize selectedCard, frontCard, backCard, currentView, otherview;
+
+@synthesize selectedCard, frontCard;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,13 +31,7 @@
 
 - (void)viewDidLoad
 {
-    cardDidFlip = NO;
-    UISwipeGestureRecognizer *swipeRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipeHandle:)];
-    swipeRightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
-    [swipeRightRecognizer setNumberOfTouchesRequired:1];
-    [self.view addGestureRecognizer:swipeRightRecognizer];
-    [self setViews];
-    [super viewDidLoad];
+        [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
 
@@ -54,35 +49,22 @@
 
 -(void)goToNextCard{
     [flashCardsList cycleCards];
-    [self setViews];
+    frontCard.passedCard = [flashCardsList selectedCard];
+    [frontCard setFields];
 }
 
--(void)setViews{
-    _genericName.text = selectedCard.genericName;
-    _brandName.text = selectedCard.brandName;
-    _therapueticClass.text = selectedCard.therapueticClass;
-}
-
-
--(void)rightSwipeHandle:(UISwipeGestureRecognizer *)gestureRecognizer{
-    cardDidFlip = YES;
-    [UIView transitionFromView:frontCard toView:backCard duration:1.0 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL inFinished){
-        _swipeRightRecognizer = nil;
-        UISwipeGestureRecognizer *swipeLeftRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipeHandle:)];
-        swipeLeftRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
-        [swipeLeftRecognizer setNumberOfTouchesRequired:1];
-        [self.view addGestureRecognizer:swipeLeftRecognizer];
-    }];
-}
-
--(void)leftSwipeHandle:(UISwipeGestureRecognizer *)gestureRecognizer{
-    [UIView transitionFromView:frontCard toView:backCard duration:1.0 options:UIViewAnimationOptionTransitionFlipFromLeft completion:^(BOOL inFinished){
-        _swipeLeftRecognizer = nil;
-        UISwipeGestureRecognizer *swipeRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipeHandle:)];
-        swipeRightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
-        [swipeRightRecognizer setNumberOfTouchesRequired:1];
-        [self.view addGestureRecognizer:swipeRightRecognizer];
-    }];
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if (!flashCardsList){
+        flashCardsList = [[FlashCards alloc]init];
+    }
+    [flashCardsList cycleCards];
+    
+    if ([[segue identifier] isEqualToString:@"flashCardShowSegue"]){
+        frontCard = segue.destinationViewController;
+            //[frontCard setDelegate:self];
+        frontCard.passedCard = [flashCardsList selectedCard];
+        [frontCard setFields];
+    }
 }
 
 /*-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

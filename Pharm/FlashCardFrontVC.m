@@ -47,6 +47,7 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"flashCardFlipSegue"]){
+        backView = [[FlashCardBackVC alloc]init];
         backView = segue.destinationViewController;
         //[frontCard setDelegate:self];
         backView.passedCard = self.passedCard;
@@ -56,8 +57,19 @@
     }
 }
 
+-(void)setFields{
+    _genericName.text = passedCard.genericName;
+    _brandName.text = passedCard.brandName;
+}
 
 
+-(void)rightSwipeHandle:(UISwipeGestureRecognizer *)recognizer{
+    NSLog(@"%@", self.passedCard);
+    backView.passedCard = self.passedCard;
+    [backView setViews];
+    NSLog(@"%@", backView.passedCard);
+    [UIView transitionFromView:self.view toView:backView.view duration:1.0 options:UIViewAnimationOptionTransitionFlipFromRight completion:NULL];
+}
 
 
 /*
