@@ -41,7 +41,7 @@
     self.keyPointField.delegate = self;
     
     [super viewDidLoad];
-    DrugAppAppDelegate  *appDelegate = [UIApplication sharedApplication].delegate;
+    DrugAppAppDelegate  *appDelegate = [UIApplication sharedApplication].delegate;                  
     self.managedObjectContext = appDelegate.managedObjectContext;
     [self initialSetup];
     
