@@ -1212,7 +1212,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qC8-Kg-HMC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1909" y="-2010"/>
+            <point key="canvasLocation" x="1799" y="-1893"/>
         </scene>
         <!--Flash Card FrontVC-->
         <scene sceneID="PYh-dg-ova">

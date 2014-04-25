@@ -11,21 +11,21 @@
 #import "Drug.h"
 
 @interface Question : NSObject
-@property (strong, nonatomic) Drug *corrAns;
-@property (strong, nonatomic) Drug *wrongAns1;
-@property (strong, nonatomic) Drug *wrongAns2;
-@property (strong, nonatomic) Drug *wrongAns3;
-@property (strong, nonatomic) NSArray *fetchedDrugsArray;
-@property (strong, nonatomic) NSMutableArray *propertyList;
-@property (strong, nonatomic) NSMutableArray *answerList;
-@property (strong, nonatomic) NSString *propertyselect;
+@property Drug *corrAns;
+@property Drug *wrongAns1;
+@property Drug *wrongAns2;
+@property Drug *wrongAns3;
+@property NSArray *fetchedDrugsArray;
+@property NSMutableArray *propertyList;
+@property NSMutableArray *answerList;
+@property NSString *propertyselect;
 
-@property (strong, nonatomic) NSString *questionText;
+@property NSString *questionText;
 
-@property (strong, nonatomic) NSString *rightAnstxt;
-@property (strong, nonatomic) NSString *wrongAnstxt1;
-@property (strong, nonatomic) NSString *wrongAnstxt2;
-@property (strong, nonatomic) NSString *wrongAnstxt3;
+@property NSString *rightAnstxt;
+@property NSString *wrongAnstxt1;
+@property NSString *wrongAnstxt2;
+@property NSString *wrongAnstxt3;
 
 @property BOOL wrongAnsSelected;
 

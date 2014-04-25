@@ -24,6 +24,8 @@
 @synthesize totalQs;
 
 
+
+
 /*-(void)changeView{
     [_rightBut1 setHidden:YES];
     [_rightBut2 setHidden:YES];

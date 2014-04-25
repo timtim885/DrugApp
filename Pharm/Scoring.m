@@ -7,7 +7,7 @@
 //
 
 #import "Scoring.h"
-#import "QuizVC.h"
+//#import "QuizVC.h"
 
 @implementation Scoring
 
