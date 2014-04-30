@@ -9,7 +9,7 @@
 #import "GenSearchViewController.h"
 #import "DrugAppAppDelegate.h"
 #import "Drug.h"
-#import "DrugDetailViewController.h"
+#import "DrugDetailTableViewController.h"
 
 @interface GenSearchViewController ()
 @property (nonatomic, strong) NSArray *fetchedDrugsArray;
@@ -70,11 +70,17 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellIdentifier = @"drugCellIdentifier";
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier
+                                                                 forIndexPath:indexPath];
+    
     if (tableView == self.searchDisplayController.searchResultsTableView){
+        
         Drug *drug = [self.filteredDrugsSearch objectAtIndex:indexPath.row];
             cell.textLabel.text = [NSString stringWithFormat:@"%@",drug.genericName];
+        
     }else{
+        
         Drug *drug = [self.fetchedDrugsArray objectAtIndex:indexPath.row];
             cell.textLabel.text = [NSString stringWithFormat:@"%@",drug.genericName];
     }
@@ -82,12 +88,15 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    DrugDetailViewController *detailController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewControllerIdentifier"];
+    DrugDetailTableViewController *detailController = [self.storyboard instantiateViewControllerWithIdentifier:@"DrugDetailVCIdentifier"];
+    
     if (tableView == self.searchDisplayController.searchResultsTableView){
         detailController.selectedDrug = [self.filteredDrugsSearch objectAtIndex:indexPath.row];
+    
     }else{
     detailController.selectedDrug = [self.fetchedDrugsArray objectAtIndex:indexPath.row];
     }
+    
     [self.navigationController pushViewController:detailController animated:YES];
     
 }

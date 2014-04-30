@@ -9,7 +9,7 @@
 #import "BraSearchViewController.h"
 #import "DrugAppAppDelegate.h"
 #import "Drug.h"
-#import "DrugDetailViewController.h"
+#import "DrugDetailTableViewController.h"
 
 @interface BraSearchViewController ()
 @property (nonatomic, strong) NSArray *fetchedDrugsArray;
@@ -64,7 +64,7 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    DrugDetailViewController *detailController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewControllerIdentifier"];
+    DrugDetailTableViewController *detailController = [self.storyboard instantiateViewControllerWithIdentifier:@"DrugDetailVCIdentifier"];
     detailController.selectedDrug = [self.fetchedDrugsArray objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:detailController animated:YES];
     

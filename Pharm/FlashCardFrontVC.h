@@ -6,9 +6,17 @@
 //  Copyright (c) 2014 UOP. All rights reserved.
 //
 
+
+@protocol FlashCardFlip
+
+@property (retain) UISwipeGestureRecognizer *swipeRightRecognizer;
+
+@end
+
 #import <UIKit/UIKit.h>
 #import "Drug.h"
 #import "FlashCardBackVC.h"
+
 
 @interface FlashCardFrontVC : UIViewController
 
@@ -21,7 +29,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *genericName;
 @property (weak, nonatomic) IBOutlet UILabel *brandName;
 
-@property (retain) UISwipeGestureRecognizer *swipeRightRecognizer;
+//@property (retain) UISwipeGestureRecognizer *swipeRightRecognizer;
 
 -(void)setFields;
 

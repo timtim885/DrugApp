@@ -17,9 +17,11 @@
 @synthesize swipeRightRecognizer = _swipeRightRecognizer;
 @synthesize passedCard, backView;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithNibName:(NSString *)nibNameOrNil
+               bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:nibNameOrNil
+                           bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
@@ -28,7 +30,8 @@
 
 - (void)viewDidLoad
 {
-    UISwipeGestureRecognizer *swipeRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipeHandle:)];
+    UISwipeGestureRecognizer *swipeRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                                                               action:@selector(rightSwipeHandle:)];
     swipeRightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
     [swipeRightRecognizer setNumberOfTouchesRequired:1];
     [self.view addGestureRecognizer:swipeRightRecognizer];

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		921E70C018D8BB4300F5134E /* FlashCards.m in Sources */ = {isa = PBXBuildFile; fileRef = 921E70BF18D8BB4300F5134E /* FlashCards.m */; };
 		922C1EA018D76E57002437F2 /* TherClassSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 922C1E9F18D76E57002437F2 /* TherClassSearchViewController.m */; };
-		92669C0C18ECD5D20027E41B /* testTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92669C0B18ECD5D20027E41B /* testTableView.m */; };
 		9272ABCC18DB52C0004B4712 /* FlashcardsRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9272ABC718DB52C0004B4712 /* FlashcardsRootVC.m */; };
 		9272ABCD18DB52C0004B4712 /* FlashCardQuizVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9272ABC918DB52C0004B4712 /* FlashCardQuizVC.m */; };
 		9272ABCE18DB52C0004B4712 /* FlashCardListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9272ABCB18DB52C0004B4712 /* FlashCardListVC.m */; };
@@ -38,9 +37,9 @@
 		92A2D9A818C7950B00804F14 /* Drug.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2D9A718C7950B00804F14 /* Drug.m */; };
 		92BA11CE18EDC9C000BBAAC6 /* FlashCardFrontVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BA11CD18EDC9C000BBAAC6 /* FlashCardFrontVC.m */; };
 		92BA11D118EDC9D700BBAAC6 /* FlashCardBackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92BA11D018EDC9D700BBAAC6 /* FlashCardBackVC.m */; };
+		92D0170C191002D500BC0C70 /* DrugDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D0170B191002D500BC0C70 /* DrugDetailTableViewController.m */; };
 		92DF5EF518DB549600C31F87 /* QuizVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DF5EF418DB549600C31F87 /* QuizVC.m */; };
 		92DF5EF818DB54AE00C31F87 /* Scoring.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DF5EF718DB54AE00C31F87 /* Scoring.m */; };
-		92FF355218C7A5A90056D52B /* DrugDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FF355118C7A5A90056D52B /* DrugDetailViewController.m */; };
 		A69A905218EB9B8D00E69EF3 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = A69A905118EB9B8D00E69EF3 /* Question.m */; };
 /* End PBXBuildFile section */
 
@@ -59,8 +58,6 @@
 		921E70BF18D8BB4300F5134E /* FlashCards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashCards.m; sourceTree = "<group>"; };
 		922C1E9E18D76E57002437F2 /* TherClassSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TherClassSearchViewController.h; sourceTree = "<group>"; };
 		922C1E9F18D76E57002437F2 /* TherClassSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TherClassSearchViewController.m; sourceTree = "<group>"; };
-		92669C0A18ECD5D20027E41B /* testTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = testTableView.h; path = Pharm/testTableView.h; sourceTree = "<group>"; };
-		92669C0B18ECD5D20027E41B /* testTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = testTableView.m; path = Pharm/testTableView.m; sourceTree = "<group>"; };
 		9272ABC618DB52C0004B4712 /* FlashcardsRootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashcardsRootVC.h; sourceTree = "<group>"; };
 		9272ABC718DB52C0004B4712 /* FlashcardsRootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashcardsRootVC.m; sourceTree = "<group>"; };
 		9272ABC818DB52C0004B4712 /* FlashCardQuizVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashCardQuizVC.h; sourceTree = "<group>"; };
@@ -104,12 +101,12 @@
 		92BA11CD18EDC9C000BBAAC6 /* FlashCardFrontVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashCardFrontVC.m; sourceTree = "<group>"; };
 		92BA11CF18EDC9D700BBAAC6 /* FlashCardBackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashCardBackVC.h; sourceTree = "<group>"; };
 		92BA11D018EDC9D700BBAAC6 /* FlashCardBackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashCardBackVC.m; sourceTree = "<group>"; };
+		92D0170A191002D500BC0C70 /* DrugDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrugDetailTableViewController.h; sourceTree = "<group>"; };
+		92D0170B191002D500BC0C70 /* DrugDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrugDetailTableViewController.m; sourceTree = "<group>"; };
 		92DF5EF318DB549600C31F87 /* QuizVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizVC.h; sourceTree = "<group>"; };
 		92DF5EF418DB549600C31F87 /* QuizVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizVC.m; sourceTree = "<group>"; };
 		92DF5EF618DB54AE00C31F87 /* Scoring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scoring.h; sourceTree = "<group>"; };
 		92DF5EF718DB54AE00C31F87 /* Scoring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scoring.m; sourceTree = "<group>"; };
-		92FF355018C7A5A90056D52B /* DrugDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrugDetailViewController.h; sourceTree = "<group>"; };
-		92FF355118C7A5A90056D52B /* DrugDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrugDetailViewController.m; sourceTree = "<group>"; };
 		A69A905018EB9B8D00E69EF3 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
 		A69A905118EB9B8D00E69EF3 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,8 +140,6 @@
 		92A2D95018C790BB00804F14 = {
 			isa = PBXGroup;
 			children = (
-				92669C0A18ECD5D20027E41B /* testTableView.h */,
-				92669C0B18ECD5D20027E41B /* testTableView.m */,
 				92A2D96418C790BB00804F14 /* Pharm */,
 				92A2D98118C790BB00804F14 /* PharmTests */,
 				92A2D95B18C790BB00804F14 /* Frameworks */,
@@ -244,6 +239,8 @@
 				9272ABCA18DB52C0004B4712 /* FlashCardListVC.h */,
 				9272ABCB18DB52C0004B4712 /* FlashCardListVC.m */,
 				92A2D99418C7910500804F14 /* Main.storyboard */,
+				92D0170A191002D500BC0C70 /* DrugDetailTableViewController.h */,
+				92D0170B191002D500BC0C70 /* DrugDetailTableViewController.m */,
 				92BA11CC18EDC9C000BBAAC6 /* FlashCardFrontVC.h */,
 				92BA11CD18EDC9C000BBAAC6 /* FlashCardFrontVC.m */,
 				927B7DE118EB8914009B2F8C /* AnswersTableVC.h */,
@@ -260,8 +257,6 @@
 				92A2D99718C7915D00804F14 /* RootViewContoller.m */,
 				92A2D99918C7936200804F14 /* AddDrugViewController.h */,
 				92A2D99A18C7936200804F14 /* AddDrugViewController.m */,
-				92FF355018C7A5A90056D52B /* DrugDetailViewController.h */,
-				92FF355118C7A5A90056D52B /* DrugDetailViewController.m */,
 				92BA11CF18EDC9D700BBAAC6 /* FlashCardBackVC.h */,
 				92BA11D018EDC9D700BBAAC6 /* FlashCardBackVC.m */,
 			);
@@ -389,10 +384,8 @@
 				92A2D97218C790BB00804F14 /* Pharm.xcdatamodeld in Sources */,
 				A69A905218EB9B8D00E69EF3 /* Question.m in Sources */,
 				92A2D9A118C7942B00804F14 /* GenSearchViewController.m in Sources */,
-				92669C0C18ECD5D20027E41B /* testTableView.m in Sources */,
 				9272ABCD18DB52C0004B4712 /* FlashCardQuizVC.m in Sources */,
 				921E70C018D8BB4300F5134E /* FlashCards.m in Sources */,
-				92FF355218C7A5A90056D52B /* DrugDetailViewController.m in Sources */,
 				927B7DE318EB8914009B2F8C /* AnswersTableVC.m in Sources */,
 				92A2D99818C7915D00804F14 /* RootViewContoller.m in Sources */,
 				92A2D99B18C7936200804F14 /* AddDrugViewController.m in Sources */,
@@ -402,6 +395,7 @@
 				9272ABCC18DB52C0004B4712 /* FlashcardsRootVC.m in Sources */,
 				92BA11D118EDC9D700BBAAC6 /* FlashCardBackVC.m in Sources */,
 				92A2D99E18C793D400804F14 /* DrugSearchTabBarController.m in Sources */,
+				92D0170C191002D500BC0C70 /* DrugDetailTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

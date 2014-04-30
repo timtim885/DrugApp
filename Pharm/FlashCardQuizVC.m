@@ -67,24 +67,5 @@
     }
 }
 
-/*-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@"flashCardSegue"]){
-        if (!flashCardsList){
-            flashCardsList = [[FlashCards alloc]init];
-        }
-        [flashCardsList cycleCards];
-        _frontCard = segue.destinationViewController;
-            //[frontCard setDelegate:self];
-        _frontCard.passedCard = [flashCardsList selectedCard];
-            //segue.destinationViewController setPassedQuestion:self.nextQuestion];
-    }
-}*/
-    
-/*UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-FlashCardQuizVC *fcNextVC = [storyboard instantiateViewControllerWithIdentifier:@"FlashcardQuiz"];
-UINavigationController *navController = self.navigationController;
-[navController popViewControllerAnimated:NO];
-[navController pushViewController:fcNextVC animated:YES];
-}*/
 
 @end

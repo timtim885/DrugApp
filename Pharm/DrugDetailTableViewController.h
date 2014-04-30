@@ -1,17 +1,16 @@
 //
-//  DrugDetailViewController.h
+//  DrugDetailTableViewController.h
 //  Pharm
 //
-//  Created by PHSIT on 3/5/14.
+//  Created by PHSIT on 4/29/14.
 //  Copyright (c) 2014 UOP. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "Drug.h"
 #import "FlashCards.h"
+#import "Drug.h"
 
-
-@interface DrugDetailViewController : UIViewController <UITextFieldDelegate>
+@interface DrugDetailTableViewController : UITableViewController <UITextFieldDelegate>
 
 {
     FlashCards *flashCard;
@@ -36,3 +35,4 @@
 - (IBAction)addToFlashCards:(id)sender;
 
 @end
+
