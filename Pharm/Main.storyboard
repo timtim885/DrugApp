@@ -129,12 +129,12 @@
                                     <action selector="nextCard:" destination="Nq0-dk-bxa" eventType="touchUpInside" id="doi-0B-q1I"/>
                                 </connections>
                             </button>
-                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v4a-t2-4ea">
-                                <rect key="frame" x="20" y="77" width="280" height="332"/>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2nI-3c-U7O">
+                                <rect key="frame" x="20" y="94" width="280" height="338"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="W0F-av-qq9" kind="embed" identifier="flashCardShowSegue" id="9P1-eO-ecd"/>
+                                    <segue destination="gdM-ZK-HWb" kind="embed" id="wvi-CT-yiH"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -1137,6 +1137,28 @@
             </objects>
             <point key="canvasLocation" x="1799" y="-1893"/>
         </scene>
+        <!--Container View Controller-->
+        <scene sceneID="y5e-p9-d2D">
+            <objects>
+                <viewController id="gdM-ZK-HWb" customClass="ContainerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QkM-s9-GZf"/>
+                        <viewControllerLayoutGuide type="bottom" id="g2m-KA-VnI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0UR-ee-pNe">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="338"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="W0F-av-qq9" kind="custom" identifier="embedFirst" customClass="EmptySegue" id="Fbu-71-6Jz"/>
+                        <segue destination="Ubs-cw-35U" kind="custom" identifier="embedSecond" customClass="EmptySegue" id="h0f-Bf-kD8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eFe-5X-0sA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2784" y="1250"/>
+        </scene>
         <!--Flash Card FrontVC-->
         <scene sceneID="PYh-dg-ova">
             <objects>
@@ -1146,7 +1168,7 @@
                         <viewControllerLayoutGuide type="bottom" id="sE7-sN-hfP"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Qq2-RO-pnI">
-                        <rect key="frame" x="0.0" y="0.0" width="280" height="332"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Generic name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5BM-VZ-DIA">
@@ -1169,12 +1191,11 @@
                     <connections>
                         <outlet property="brandName" destination="hnN-6D-ATO" id="9Hb-rt-ejM"/>
                         <outlet property="genericName" destination="5BM-VZ-DIA" id="7gX-Uu-Yqe"/>
-                        <segue destination="Ubs-cw-35U" kind="push" identifier="flashCardFlipSegue" id="Yij-ZR-QDC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OXv-YB-YwR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2813" y="1327"/>
+            <point key="canvasLocation" x="3219" y="647"/>
         </scene>
         <!--Flash Card BackVC-->
         <scene sceneID="YjG-XV-qHe">
@@ -1185,7 +1206,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Bc7-Gc-l3D"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fzp-YI-TON">
-                        <rect key="frame" x="0.0" y="0.0" width="280" height="332"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LABEL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzT-ZJ-xLq">
@@ -1205,6 +1226,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qs8-GJ-oTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3279" y="1332"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="iE2-uG-zZh">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Aln-Dh-jfA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MPQ-Io-wom"/>
+                        <viewControllerLayoutGuide type="bottom" id="F3o-aZ-pSK"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6qy-DW-IO2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DxE-zk-6vl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

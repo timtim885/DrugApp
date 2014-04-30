@@ -7,12 +7,6 @@
 //
 
 
-@protocol FlashCardFlip
-
-@property (retain) UISwipeGestureRecognizer *swipeRightRecognizer;
-
-@end
-
 #import <UIKit/UIKit.h>
 #import "Drug.h"
 #import "FlashCardBackVC.h"
@@ -24,7 +18,7 @@
     UISwipeGestureRecognizer *_swipeRightRecognizer;
 }
 
-@property (strong, nonatomic) FlashCardBackVC *backView;
+//@property (strong, nonatomic) FlashCardBackVC *backView;
 @property (strong, nonatomic) Drug *passedCard;
 @property (weak, nonatomic) IBOutlet UILabel *genericName;
 @property (weak, nonatomic) IBOutlet UILabel *brandName;

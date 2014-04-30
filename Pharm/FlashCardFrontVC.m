@@ -14,8 +14,8 @@
 
 @implementation FlashCardFrontVC
 
-@synthesize swipeRightRecognizer = _swipeRightRecognizer;
-@synthesize passedCard, backView;
+//@synthesize swipeRightRecognizer = _swipeRightRecognizer;
+@synthesize passedCard; //, backView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil
                bundle:(NSBundle *)nibBundleOrNil
@@ -30,11 +30,11 @@
 
 - (void)viewDidLoad
 {
-    UISwipeGestureRecognizer *swipeRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+    /*UISwipeGestureRecognizer *swipeRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
                                                                                                action:@selector(rightSwipeHandle:)];
     swipeRightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
     [swipeRightRecognizer setNumberOfTouchesRequired:1];
-    [self.view addGestureRecognizer:swipeRightRecognizer];
+    [self.view addGestureRecognizer:swipeRightRecognizer];*/
     [self setFields];
     [super viewDidLoad];
 
@@ -48,7 +48,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+/*-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"flashCardFlipSegue"]){
         backView = [[FlashCardBackVC alloc]init];
         backView = segue.destinationViewController;
@@ -58,7 +58,7 @@
         [backView setViews];
         //segue.destinationViewController setPassedQuestion:self.nextQuestion];
     }
-}
+}*/
 
 -(void)setFields{
     _genericName.text = passedCard.genericName;
@@ -66,13 +66,13 @@
 }
 
 
--(void)rightSwipeHandle:(UISwipeGestureRecognizer *)recognizer{
+/*-(void)rightSwipeHandle:(UISwipeGestureRecognizer *)recognizer{
     NSLog(@"%@", self.passedCard);
     backView.passedCard = self.passedCard;
     [backView setViews];
     NSLog(@"%@", backView.passedCard);
     [UIView transitionFromView:self.view toView:backView.view duration:1.0 options:UIViewAnimationOptionTransitionFlipFromRight completion:NULL];
-}
+}*/
 
 
 /*
