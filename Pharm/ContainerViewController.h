@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "FlashCardBackVC.h"
 #import "FlashCardFrontVC.h"
+#import "FlashCards.h"
+#import "Drug.h"
 
 
 
@@ -18,6 +20,9 @@
 
 @property (strong, nonatomic) FlashCardBackVC *backView;
 @property (strong, nonatomic) FlashCardFrontVC *frontView;
+
+//@property (strong, nonatomic) Drug *selectedDrug;
+//@property (strong, nonatomic) FlashCards *flashCardList;
 
 @property (retain) UISwipeGestureRecognizer *swipeRightRecognizer;
 

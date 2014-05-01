@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Drug.h"
 #import "FlashCards.h"
-//#import "FlashCardFrontVC.h"
-//#import "FlashCardBackVC.h"
+
 
 @interface FlashCardQuizVC : UIViewController
 
@@ -23,7 +22,7 @@
 -(void)goToNextCard;
 
 
-@property (strong, nonatomic) Drug *selectedCard;
+//@property (strong, nonatomic) Drug *selectedCard;
 
 //@property (strong, nonatomic) FlashCardFrontVC *frontCard;
 //@property (strong, nonatomic) FlashCardBackVC *backCard;

@@ -16,10 +16,13 @@
     long maxCards;
 }
 
-@property Drug *selectedCard;
+
+-(Drug *)getSelectedCard;
+-(void)setSelectedCard:(Drug *)drug;
+
 
 -(void)addToList:(Drug *)drug;
--(Drug *)cycleCards;
+-(void)cycleCards;
 -(NSUInteger)countCards;
 -(NSMutableArray *)getList;
 -(BOOL)drugIsInArray:(Drug *)drug;

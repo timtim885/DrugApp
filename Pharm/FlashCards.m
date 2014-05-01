@@ -8,21 +8,31 @@
 
 #import "FlashCards.h"
 
+
+
 @implementation FlashCards
 
 static NSMutableArray *flashcardList;
+static Drug *selectedCard;
+
 
 
 -(void)addToList:(Drug *)drug{
     if (!flashcardList){
-        [self initList];
-    
-    }
+        flashcardList = [[NSMutableArray alloc] init];
         [flashcardList addObject:drug];
+    
+    }else{
+        [flashcardList addObject:drug];
+    }
     
 }
 
 -(NSMutableArray *)getList{
+    if (!flashcardList){
+        flashcardList = [[NSMutableArray alloc] init];
+    }
+    
     return flashcardList;
 }
 
@@ -54,26 +64,46 @@ static NSMutableArray *flashcardList;
     return self;
 }*/
 
--(void)initList{
-    flashcardList = [[NSMutableArray alloc] init];
+-(void)setSelectedCard:(Drug *)drug{
+    selectedCard = drug;
+}
+
+-(Drug *)getSelectedCard{
+    if(!selectedCard){
+        [self setSelectedCard:[[Drug alloc] init]];
+        //[self cycleCards];
+    }
+    return selectedCard;
 }
 
 
 
--(Drug *)cycleCards{
+
+
+
+-(void)cycleCards{
     if(!maxCards){
         maxCards = [flashcardList count];
         nextCard = 0;
-        _selectedCard = [flashcardList objectAtIndex:nextCard];
+        [self setSelectedCard:[self.getList objectAtIndex:nextCard]];
     }else{
         nextCard++;
         if (nextCard >= maxCards){
             nextCard = 0;
         }
-        _selectedCard = [flashcardList objectAtIndex:nextCard];
+        [self setSelectedCard:[self.getList objectAtIndex:nextCard]];
     }
-    return _selectedCard;
+    //return selectedCard;
 }
+
+/*-(Drug *)getSelectedCard{
+    if (!selectedCard) {
+        [self cycleCards];
+        return selectedCard;
+    }
+    return selectedCard;
+    
+}*/
 
 
 @end

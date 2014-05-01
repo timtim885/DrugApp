@@ -14,9 +14,6 @@
 
 @implementation FlashCardFrontVC
 
-//@synthesize swipeRightRecognizer = _swipeRightRecognizer;
-@synthesize passedCard; //, backView;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil
                bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,6 +32,9 @@
     swipeRightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
     [swipeRightRecognizer setNumberOfTouchesRequired:1];
     [self.view addGestureRecognizer:swipeRightRecognizer];*/
+    self.passedCard = [[Drug alloc]init];
+    self.flashCardsList = [[FlashCards alloc]init];
+    self.passedCard = [self.flashCardsList getSelectedCard];
     [self setFields];
     [super viewDidLoad];
 
@@ -61,8 +61,8 @@
 }*/
 
 -(void)setFields{
-    _genericName.text = passedCard.genericName;
-    _brandName.text = passedCard.brandName;
+    self.genericName.text = self.passedCard.genericName;
+    self.brandName.text = self.passedCard.brandName;
 }
 
 

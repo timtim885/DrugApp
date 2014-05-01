@@ -14,7 +14,7 @@
 
 @implementation FlashCardBackVC
 
-@synthesize passedCard;
+//@synthesize passedCard;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +28,9 @@
 - (void)viewDidLoad
 {
     NSLog(@"viewDidLoadRAn");
+    self.passedCard = [[Drug alloc]init];
+    self.flashCardsList = [[FlashCards alloc] init];
+    self.passedCard = [self.flashCardsList getSelectedCard];
     [self setViews];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -41,7 +44,7 @@
 
 -(void)setViews{
     
-    _genericName.text = [passedCard genericName];
+    self.genericName.text = self.passedCard.genericName;
 }
 
 /*

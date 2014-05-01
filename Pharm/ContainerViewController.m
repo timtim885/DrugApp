@@ -12,6 +12,8 @@
 @property (strong, nonatomic) NSString *currentSegueIdentifier;
 @property (assign, nonatomic) BOOL transitionInProgress;
 
+-(void)rightSwipe;
+
 @end
 
 @implementation ContainerViewController
@@ -29,11 +31,27 @@
 {
     [super viewDidLoad];
     
+    /*self.flashCardList = [[FlashCards alloc] init];
+    self.selectedDrug = [[Drug alloc] init];
+    [self.flashCardList cycleCards];
+    self.selectedDrug = [self.flashCardList getSelectedCard];*/
     self.transitionInProgress = NO;
     self.currentSegueIdentifier = @"embedFirst";
     [self performSegueWithIdentifier:@"embedFirst" sender:nil];
+    self.swipeRightRecognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(rightSwipe)];
+    self.swipeRightRecognizer.numberOfTouchesRequired = 1;
+    self.swipeRightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:self.swipeRightRecognizer];
     
     // Do any additional setup after loading the view.
+}
+-(void)rightSwipe{
+    if ([self.currentSegueIdentifier  isEqual: @"embedFirst"]){
+        [self performSegueWithIdentifier:@"embedSecond" sender:self];
+    }else{
+        [self performSegueWithIdentifier:@"embedFirst" sender:self];
+    }
+        
 }
 
 - (void)didReceiveMemoryWarning
@@ -101,7 +119,7 @@
     }
     
     self.transitionInProgress = YES;
-    self.currentSegueIdentifier = ([self.currentSegueIdentifier isEqualToString:SegueIdentifierFirst]) ? SegueIdentifierSecond : SegueIdentifierFirst;
+    self.currentSegueIdentifier = ([self.currentSegueIdentifier isEqualToString:@"embedFirst"]) ? @"embedSecond" : @"embedFirst";
     [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
 }
 

@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Drug.h"
+#import "FlashCards.h"
 
 @interface FlashCardBackVC : UIViewController
 
 @property (strong, nonatomic) Drug *passedCard;
+@property (strong, nonatomic) FlashCards *flashCardsList;
 @property (weak, nonatomic) IBOutlet UILabel *genericName;
 
 -(void)setViews;

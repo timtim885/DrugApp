@@ -9,16 +9,15 @@
 
 #import <UIKit/UIKit.h>
 #import "Drug.h"
+#import "FlashCards.h"
 #import "FlashCardBackVC.h"
 
 
 @interface FlashCardFrontVC : UIViewController
 
-{
-    UISwipeGestureRecognizer *_swipeRightRecognizer;
-}
 
 //@property (strong, nonatomic) FlashCardBackVC *backView;
+@property (strong, nonatomic) FlashCards *flashCardsList;
 @property (strong, nonatomic) Drug *passedCard;
 @property (weak, nonatomic) IBOutlet UILabel *genericName;
 @property (weak, nonatomic) IBOutlet UILabel *brandName;

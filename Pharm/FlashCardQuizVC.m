@@ -18,7 +18,7 @@
 @implementation FlashCardQuizVC
 
 
-@synthesize selectedCard; //, frontCard;
+//@synthesize selectedCard; //, frontCard;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,7 +31,8 @@
 
 - (void)viewDidLoad
 {
-        [super viewDidLoad];
+    [super viewDidLoad];
+    flashCardsList = [[FlashCards alloc]init];
 	// Do any additional setup after loading the view.
 }
 
@@ -49,8 +50,6 @@
 
 -(void)goToNextCard{
     [flashCardsList cycleCards];
-    frontCard.passedCard = [flashCardsList selectedCard];
-    [frontCard setFields];
 }
 
 /*-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
