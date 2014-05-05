@@ -37,4 +37,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (IBAction)goToQuiz:(id)sender {
+    DrugAppAppDelegate *appDelegate = [[DrugAppAppDelegate alloc] init];
+    if (![appDelegate getAllDrugEntries].count || ![appDelegate getAllDrugEntries] ) {
+        UIAlertView *nulFCAlert = [[UIAlertView alloc] initWithTitle:@"Empty drugs list!" message:@"Your current list of drugs is empty.  Please add drugs to the list." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [nulFCAlert show];
+    }else if ([appDelegate getAllDrugEntries].count < 10 ){
+        UIAlertView *nulFCAlert = [[UIAlertView alloc] initWithTitle:@"Not enough drugs in list!" message:@"Your current list of drugs is to small to generate quiz questions.  You are required to have at least 10 drugs in your list. Please add drugs to your list." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [nulFCAlert show];
+
+    }else{
+    [self performSegueWithIdentifier:@"goQuizIdentifier" sender:self];
+    }
+}
+    
+    
 @end

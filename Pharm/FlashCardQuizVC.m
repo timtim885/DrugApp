@@ -10,9 +10,10 @@
 #import "FlashCards.h"
 #import "FlashCardBackVC.h"
 #import "FlashCardFrontVC.h"
+#import "ContainerViewController.h"
 
 @interface FlashCardQuizVC ()
-
+@property (nonatomic, weak) ContainerViewController *containerViewController;
 @end
 
 @implementation FlashCardQuizVC
@@ -50,6 +51,13 @@
 
 -(void)goToNextCard{
     [flashCardsList cycleCards];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"embedContainer"]){
+        self.containerViewController = segue.destinationViewController;
+    }
+    
 }
 
 /*-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

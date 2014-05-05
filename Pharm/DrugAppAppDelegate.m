@@ -13,6 +13,7 @@
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize emptyDrugList = _emptyDrugList;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -147,13 +148,17 @@
 }
 
 -(NSArray *)getAllDrugEntries{
-
-    
     NSFetchRequest *fetchReqeust = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Drug" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Drug"
+                                              inManagedObjectContext:self.managedObjectContext];
     [fetchReqeust setEntity:entity];
     NSError *error;
     NSArray *fetchedDrugs = [self.managedObjectContext executeFetchRequest:fetchReqeust error:&error];
+    if (!fetchedDrugs.count || !fetchedDrugs) {
+        self.emptyDrugList = TRUE;
+    }else{
+        self.emptyDrugList = FALSE;
+    }
     
     return fetchedDrugs;
 }

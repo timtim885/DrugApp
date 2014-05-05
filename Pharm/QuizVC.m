@@ -59,14 +59,16 @@
         quizScore = [[Scoring alloc] init];
     }
     [nextQuestion selectObjAnswers];
+
+    
     questionLbl.text = [nextQuestion questionText];
 }
 
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    [self makeQuestion];
     if ([segue.identifier isEqualToString:@"ansTableSegue"]){
+        [self makeQuestion];
         AnswersTableVC *embed = segue.destinationViewController;
         [embed setDelegate:self];
         embed.passedQuestion = nextQuestion;

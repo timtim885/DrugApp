@@ -18,6 +18,8 @@
 
 @implementation ContainerViewController
 
+@synthesize currentSegueIdentifier = _currentSegueIdentifier, transitionInProgress = _transitionInProgress, frontView = _frontView, backView = _backView;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -29,30 +31,27 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
     
-    /*self.flashCardList = [[FlashCards alloc] init];
-    self.selectedDrug = [[Drug alloc] init];
-    [self.flashCardList cycleCards];
-    self.selectedDrug = [self.flashCardList getSelectedCard];*/
+    [super viewDidLoad];
+    NSLog(@"Root view contoller viewdidLoad ran");
     self.transitionInProgress = NO;
     self.currentSegueIdentifier = @"embedFirst";
-    [self performSegueWithIdentifier:@"embedFirst" sender:nil];
-    self.swipeRightRecognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(rightSwipe)];
-    self.swipeRightRecognizer.numberOfTouchesRequired = 1;
-    self.swipeRightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
-    [self.view addGestureRecognizer:self.swipeRightRecognizer];
+    [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
+    //self.swipeRightRecognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(rightSwipe)];
+    //self.swipeRightRecognizer.numberOfTouchesRequired = 1;
+    //self.swipeRightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    //[self.view addGestureRecognizer:self.swipeRightRecognizer];
     
     // Do any additional setup after loading the view.
 }
--(void)rightSwipe{
+/*-(void)rightSwipe{
     if ([self.currentSegueIdentifier  isEqual: @"embedFirst"]){
         [self performSegueWithIdentifier:@"embedSecond" sender:self];
     }else{
         [self performSegueWithIdentifier:@"embedFirst" sender:self];
     }
         
-}
+}*/
 
 - (void)didReceiveMemoryWarning
 {

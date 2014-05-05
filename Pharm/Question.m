@@ -11,7 +11,7 @@
 
 @implementation Question
 
-@synthesize corrAns, wrongAns1, wrongAns2, wrongAns3, propertyList, answerList, fetchedDrugsArray, propertyselect, rightAnstxt, wrongAnstxt1, wrongAnstxt2,wrongAnstxt3, questionText, wrongAnsSelected;
+@synthesize corrAns, wrongAns1, wrongAns2, wrongAns3, propertyList, answerList, fetchedDrugsArray, propertyselect, rightAnstxt, wrongAnstxt1, wrongAnstxt2,wrongAnstxt3, questionText, wrongAnsSelected, emptyDrugList;
 
 -(NSMutableArray *)listProperties{
     unsigned count;
@@ -113,20 +113,31 @@
     }
 }
 
-    -(Drug *)selectObjAnswers{
-        DrugAppAppDelegate  *appDelegate = [UIApplication sharedApplication].delegate;
-        fetchedDrugsArray = [appDelegate getAllDrugEntries];
+
+-(void)selectObjAnswers{
+    DrugAppAppDelegate  *appDelegate = [UIApplication sharedApplication].delegate;
+    self.fetchedDrugsArray = [appDelegate getAllDrugEntries];
+    if (appDelegate.emptyDrugList == TRUE){
+        self.emptyDrugList = TRUE;
+    }else{
+        self.emptyDrugList = FALSE;
+        [self setupAnswers];
+    }
         
-        wrongAnsSelected = NO;
-        corrAns = [self.fetchedDrugsArray objectAtIndex:arc4random()% [self.fetchedDrugsArray count]];
-        wrongAns1 = [self.fetchedDrugsArray objectAtIndex:arc4random()% [self.fetchedDrugsArray count]];
-        wrongAns2 = [self.fetchedDrugsArray objectAtIndex:arc4random()% [self.fetchedDrugsArray count]];
-        wrongAns3 = [self.fetchedDrugsArray objectAtIndex:arc4random()% [self.fetchedDrugsArray count]];
-        if ([corrAns isEqual:wrongAns1] || [corrAns isEqual:wrongAns2] || [corrAns isEqual:wrongAns3] || [wrongAns1 isEqual:wrongAns2] || [wrongAns1 isEqual:wrongAns3] || [wrongAns2 isEqual:wrongAns3]){
-            [self selectObjAnswers];
+}
+
+-(Drug *)setupAnswers{
+    wrongAnsSelected = NO;
+    corrAns = [self.fetchedDrugsArray objectAtIndex:arc4random()% [self.fetchedDrugsArray count]];
+    wrongAns1 = [self.fetchedDrugsArray objectAtIndex:arc4random()% [self.fetchedDrugsArray count]];
+    wrongAns2 = [self.fetchedDrugsArray objectAtIndex:arc4random()% [self.fetchedDrugsArray count]];
+    wrongAns3 = [self.fetchedDrugsArray objectAtIndex:arc4random()% [self.fetchedDrugsArray count]];
+    if ([corrAns isEqual:wrongAns1] || [corrAns isEqual:wrongAns2] || [corrAns isEqual:wrongAns3] || [wrongAns1 isEqual:wrongAns2] || [wrongAns1 isEqual:wrongAns3] || [wrongAns2 isEqual:wrongAns3]){
+        [self selectObjAnswers];
         }
-        [self listProperties];
-        return corrAns;
+    [self listProperties];
+    return corrAns;
+        
     }
 
 -(void)selectedWrongAns{

@@ -30,10 +30,12 @@
 @property BOOL wrongAnsSelected;
 
 
+@property BOOL emptyDrugList;
 -(NSMutableArray *)listProperties;
 -(NSString *)selectProperty;
--(Drug *)selectObjAnswers;
+-(void)selectObjAnswers;
 -(void)setupAnswertext;
 -(void)selectedWrongAns;
+-(Drug *)setupAnswers;
 
 @end

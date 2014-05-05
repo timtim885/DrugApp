@@ -70,8 +70,8 @@ static Drug *selectedCard;
 
 -(Drug *)getSelectedCard{
     if(!selectedCard){
-        [self setSelectedCard:[[Drug alloc] init]];
-        //[self cycleCards];
+        selectedCard = [[Drug alloc] init];
+        [self cycleCards];
     }
     return selectedCard;
 }

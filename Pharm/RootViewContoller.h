@@ -10,6 +10,7 @@
 
 
 @interface RootViewContoller : UIViewController
+- (IBAction)goToQuiz:(id)sender;
 
 
 @end

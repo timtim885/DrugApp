@@ -8,11 +8,16 @@
 
 #import "FlashCardFrontVC.h"
 
+
+
 @interface FlashCardFrontVC ()
 
 @end
 
+
 @implementation FlashCardFrontVC
+
+@synthesize flashCardsList=_flashCardsList, passedCard=_passedCard;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil
                bundle:(NSBundle *)nibBundleOrNil
@@ -32,11 +37,12 @@
     swipeRightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
     [swipeRightRecognizer setNumberOfTouchesRequired:1];
     [self.view addGestureRecognizer:swipeRightRecognizer];*/
-    self.passedCard = [[Drug alloc]init];
-    self.flashCardsList = [[FlashCards alloc]init];
+    //self.passedCard = [[Drug alloc]init];
+    //self.flashCardsList = [[FlashCards alloc]init];
+    [super viewDidLoad];
     self.passedCard = [self.flashCardsList getSelectedCard];
     [self setFields];
-    [super viewDidLoad];
+
 
     // Do any additional setup after loading the view.
 }
