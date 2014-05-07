@@ -18,7 +18,7 @@
 
 
 -(Drug *)getSelectedCard;
--(void)setSelectedCard:(Drug *)drug;
+//-(void)setSelectedCard:(Drug *)drug;
 
 
 -(void)addToList:(Drug *)drug;

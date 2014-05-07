@@ -7,9 +7,6 @@
 //
 
 #import "FlashCardQuizVC.h"
-#import "FlashCards.h"
-#import "FlashCardBackVC.h"
-#import "FlashCardFrontVC.h"
 #import "ContainerViewController.h"
 
 @interface FlashCardQuizVC ()
@@ -18,8 +15,6 @@
 
 @implementation FlashCardQuizVC
 
-
-//@synthesize selectedCard; //, frontCard;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,8 +28,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    flashCardsList = [[FlashCards alloc]init];
-	// Do any additional setup after loading the view.
+    UISwipeGestureRecognizer *gestureRecognizerRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeHandlerRight:)];
+    [gestureRecognizerRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.view addGestureRecognizer:gestureRecognizerRight];
+    UISwipeGestureRecognizer *gestureRecognizerLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeHandlerLeft:)];
+    [gestureRecognizerLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [self.view addGestureRecognizer:gestureRecognizerLeft];
+}
+
+-(void)swipeHandlerRight:(UISwipeGestureRecognizer *)recognizer{
+    self.containerViewController.gestureDirection = @"right";
+    [self.containerViewController swapViewControllers];
+}
+
+-(void)swipeHandlerLeft:(UISwipeGestureRecognizer *)recognizer{
+    self.containerViewController.gestureDirection = @"left";
+    [self.containerViewController swapViewControllers];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,12 +54,8 @@
 
 
 -(IBAction)nextCard:(id)sender{
-    [self goToNextCard];
+    [self.containerViewController nextCard];
     
-}
-
--(void)goToNextCard{
-    [flashCardsList cycleCards];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -60,19 +65,7 @@
     
 }
 
-/*-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if (!flashCardsList){
-        flashCardsList = [[FlashCards alloc]init];
-    }
-    [flashCardsList cycleCards];
-    
-    if ([[segue identifier] isEqualToString:@"flashCardShowSegue"]){
-        frontCard = segue.destinationViewController;
-            //[frontCard setDelegate:self];
-        frontCard.passedCard = [flashCardsList selectedCard];
-        [frontCard setFields];
-    }
-}*/
+
 
 
 @end

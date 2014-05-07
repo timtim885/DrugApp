@@ -1,18 +1,18 @@
 //
-//  FlashCardBackVC.m
+//  FlashCardFrontVC.m
 //  Pharm
 //
 //  Created by phsit on 5/7/14.
 //  Copyright (c) 2014 UOP. All rights reserved.
 //
 
-#import "FlashCardBackVC.h"
+#import "FlashCardFrontVC.h"
 
-@interface FlashCardBackVC ()
+@interface FlashCardFrontVC ()
 
 @end
 
-@implementation FlashCardBackVC
+@implementation FlashCardFrontVC
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,6 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
     // Do any additional setup after loading the view.
 }
 
@@ -34,8 +36,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 -(void)setupViewWithDrug:(Drug *)selectedDrug{
-    self.brandNameLbl.text = selectedDrug.brandName;
+    self.genericNameLbl.text = selectedDrug.genericName;
+    
 }
 
 /*

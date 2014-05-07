@@ -1,5 +1,5 @@
 //
-//  FlashCardBackVC.h
+//  FlashCardFrontVC.h
 //  Pharm
 //
 //  Created by phsit on 5/7/14.
@@ -9,11 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "Drug.h"
 
-
-@interface FlashCardBackVC : UIViewController
+@interface FlashCardFrontVC : UIViewController
 
 -(void)setupViewWithDrug:(Drug *)selectedDrug;
 
-@property (weak, nonatomic) IBOutlet UILabel *brandNameLbl;
+@property (weak, nonatomic) IBOutlet UILabel *genericNameLbl;
 
 @end

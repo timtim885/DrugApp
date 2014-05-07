@@ -9,11 +9,20 @@
 #import "FlashCards.h"
 
 
+@interface FlashCards ()
+
+@property (strong, nonatomic) Drug *selectedCard;
+
+@end
+
+
+
+
 
 @implementation FlashCards
 
 static NSMutableArray *flashcardList;
-static Drug *selectedCard;
+//static Drug *staticSelectedCard;
 
 
 
@@ -64,16 +73,16 @@ static Drug *selectedCard;
     return self;
 }*/
 
--(void)setSelectedCard:(Drug *)drug{
+/*-(void)setSelectedCard:(Drug *)drug{
     selectedCard = drug;
-}
+}*/
 
 -(Drug *)getSelectedCard{
-    if(!selectedCard){
-        selectedCard = [[Drug alloc] init];
+    if(!self.selectedCard){
+        //self.selectedCard = [[Drug alloc] init];
         [self cycleCards];
     }
-    return selectedCard;
+    return self.selectedCard;
 }
 
 
@@ -85,13 +94,13 @@ static Drug *selectedCard;
     if(!maxCards){
         maxCards = [flashcardList count];
         nextCard = 0;
-        [self setSelectedCard:[self.getList objectAtIndex:nextCard]];
+        self.selectedCard = [self.getList objectAtIndex:nextCard];
     }else{
         nextCard++;
         if (nextCard >= maxCards){
             nextCard = 0;
         }
-        [self setSelectedCard:[self.getList objectAtIndex:nextCard]];
+        self.selectedCard = [self.getList objectAtIndex:nextCard];
     }
     //return selectedCard;
 }
