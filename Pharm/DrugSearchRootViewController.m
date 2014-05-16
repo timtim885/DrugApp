@@ -14,6 +14,8 @@
 
 @implementation DrugSearchRootViewController
 
+@synthesize genericName = _genericName, brandName = _brandName, therClass = _therClass, subView = _subView, genericView = _genericView, brandView = _brandView, therClassView = _therClassView;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,6 +28,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.genericView = [self.storyboard instantiateViewControllerWithIdentifier:@"genericView"];
+    NSLog(@"genericView is %@", self.genericView);
+    
+    //self.subView = self.genericView.view;
+    [self.subView addSubview:self.genericView.view];
     // Do any additional setup after loading the view.
 }
 
@@ -36,9 +43,26 @@
 }
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
+    GenSearchViewController *genericSearchView = [[GenSearchViewController alloc]init];
+    self.subView = genericSearchView.view;
+    [self.view addSubview:self.subView];
+    [self.subView setNeedsDisplay];
     
+    /*if (item == self.genericName) {
+        GenSearchViewController *genericSearchView = [[GenSearchViewController alloc]init];
+        self.subView = genericSearchView.view;
+        [self.subView setNeedsDisplay];
+    }
+    if (item == self.brandName) {
+        BraSearchViewController *brandSearchView = [[BraSearchViewController alloc]init];
+        [self.view addSubview:brandSearchView.view];
+    }
+    if (item == self.therClass){
+        TherClassSearchViewController *therClassSearchView = [[TherClassSearchViewController alloc]init];
+        [self.view addSubview:therClassSearchView.view];
+    }
     NSLog(@"selected %@", item);
-    
+    */
 }
 
 /*
