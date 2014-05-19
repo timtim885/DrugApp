@@ -14,7 +14,7 @@
 
 @implementation DrugSearchRootViewController
 
-@synthesize genericName = _genericName, brandName = _brandName, therClass = _therClass, subView = _subView, genericView = _genericView, brandView = _brandView, therClassView = _therClassView;
+@synthesize genericName = _genericName, brandName = _brandName, therClass = _therClass, subView = _subView, genericView = _genericView, brandView = _brandView, therClassView = _therClassView, placeHolderView = _placeHolderView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,11 +29,49 @@
 {
     [super viewDidLoad];
     self.genericView = [self.storyboard instantiateViewControllerWithIdentifier:@"genericView"];
-    NSLog(@"genericView is %@", self.genericView);
+    self.brandView = [self.storyboard instantiateViewControllerWithIdentifier:@"brandView"];
+    self.therClassView = [self.storyboard instantiateViewControllerWithIdentifier:@"therClassView"];
     
+    //self.genericView.view.frame = self.subView.bounds;
+    self.placeHolderView = self.genericView;
     //self.subView = self.genericView.view;
-    [self.subView addSubview:self.genericView.view];
+    //[self.view insertSubview:self.placeHolderView.view belowSubview:self.tabBar];
+    [self.view addSubview:self.placeHolderView.view];
+    //[self changeConstraints];
     // Do any additional setup after loading the view.
+}
+
+-(void)changeConstraints{
+    [super updateViewConstraints];
+    /*[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.placeHolderView.view
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeTop
+                                                         multiplier:1.0
+                                                           constant:0.0]];*/
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.placeHolderView.view
+                                                          attribute:NSLayoutAttributeLeading
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeLeading
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.placeHolderView.view
+                                                          attribute:NSLayoutAttributeTrailing
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeTrailing
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    /*[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.tabBar
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.placeHolderView
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:0.0]];*/
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,26 +81,32 @@
 }
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
-    GenSearchViewController *genericSearchView = [[GenSearchViewController alloc]init];
-    self.subView = genericSearchView.view;
-    [self.view addSubview:self.subView];
-    [self.subView setNeedsDisplay];
     
-    /*if (item == self.genericName) {
-        GenSearchViewController *genericSearchView = [[GenSearchViewController alloc]init];
-        self.subView = genericSearchView.view;
-        [self.subView setNeedsDisplay];
+    if (item == self.genericName){
+    //self.genericView.view.frame = self.subView.bounds;
+    [self.placeHolderView.view removeFromSuperview];
+    [self.view addSubview:self.genericView.view];
+    self.placeHolderView = self.genericView;
+
     }
-    if (item == self.brandName) {
-        BraSearchViewController *brandSearchView = [[BraSearchViewController alloc]init];
-        [self.view addSubview:brandSearchView.view];
+    
+    if (item == self.brandName){
+        //self.brandView.view.frame = self.subView.bounds;
+        [self.placeHolderView.view removeFromSuperview];
+        [self.view addSubview:self.brandView.view];
+        self.placeHolderView = self.brandView;
     }
+    
     if (item == self.therClass){
-        TherClassSearchViewController *therClassSearchView = [[TherClassSearchViewController alloc]init];
-        [self.view addSubview:therClassSearchView.view];
+        //self.therClassView.view.frame = self.subView.bounds;
+        [self.placeHolderView.view removeFromSuperview];
+        [self.view addSubview:self.therClassView.view];
+        self.placeHolderView = self.therClassView;
     }
-    NSLog(@"selected %@", item);
-    */
+    else{
+        
+    }
+    
 }
 
 /*

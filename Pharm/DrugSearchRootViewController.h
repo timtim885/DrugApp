@@ -21,6 +21,10 @@
 @property (strong, nonatomic) BraSearchViewController *brandView;
 @property (strong, nonatomic) TherClassSearchViewController *therClassView;
 
+@property (strong, nonatomic) UIViewController *placeHolderView;
+
+
+
 
 @property (strong, nonatomic) IBOutlet UIView *subView;
 

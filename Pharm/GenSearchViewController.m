@@ -17,6 +17,7 @@
 
 
 
+
 @end
 
 @implementation GenSearchViewController
@@ -105,7 +106,7 @@
 
 
 
-//FIX THE BROKEN AS HELL SEARCHDISPLAYCONTROLLER!!!
+/*//FIX THE BROKEN AS HELL SEARCHDISPLAYCONTROLLER!!!
 -(void)setCorrectSearchBarFrames{
     CGRect searchDisplayFrame = self.searchDisplayController.searchResultsTableView.frame;
     searchDisplayFrame.origin.y = 40.0;
@@ -130,7 +131,7 @@
 
 
 
-}
+}*/
 
 
 
