@@ -253,7 +253,6 @@
                             <constraint firstItem="CXc-aF-mYG" firstAttribute="top" secondItem="yv2-Tr-A1a" secondAttribute="top" id="KLH-uv-p3h"/>
                             <constraint firstAttribute="trailing" secondItem="CXc-aF-mYG" secondAttribute="trailing" id="UMr-Xf-F4A"/>
                             <constraint firstAttribute="trailing" secondItem="Ks4-CW-qjQ" secondAttribute="trailing" id="iIi-Qs-caM"/>
-                            <constraint firstItem="Ks4-CW-qjQ" firstAttribute="top" secondItem="CXc-aF-mYG" secondAttribute="bottom" id="yg9-RW-4bh"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -838,7 +837,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AbB-Es-EMq">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AbB-Es-EMq">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -863,7 +862,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ava-7R-e77" firstAttribute="top" secondItem="Z1f-M6-oYf" secondAttribute="bottom" id="IhZ-1E-ScU"/>
+                            <constraint firstItem="AbB-Es-EMq" firstAttribute="top" secondItem="NOX-id-VJQ" secondAttribute="bottom" id="LDs-oZ-b0X"/>
+                            <constraint firstItem="AbB-Es-EMq" firstAttribute="leading" secondItem="AEJ-hz-Woy" secondAttribute="leading" id="XZ8-Oe-Kou"/>
+                            <constraint firstAttribute="trailing" secondItem="AbB-Es-EMq" secondAttribute="trailing" id="Ycg-9k-2or"/>
                             <constraint firstItem="Z1f-M6-oYf" firstAttribute="leading" secondItem="AEJ-hz-Woy" secondAttribute="leading" id="raU-1q-J8f"/>
+                            <constraint firstItem="Z1f-M6-oYf" firstAttribute="top" secondItem="AbB-Es-EMq" secondAttribute="bottom" id="uSj-ja-YPv"/>
                             <constraint firstAttribute="trailing" secondItem="Z1f-M6-oYf" secondAttribute="trailing" id="wa4-91-UTr"/>
                         </constraints>
                     </view>
@@ -876,6 +879,9 @@
                         <outlet property="subView" destination="AbB-Es-EMq" id="THr-am-924"/>
                         <outlet property="tabBar" destination="Z1f-M6-oYf" id="Aws-No-dDJ"/>
                         <outlet property="therClass" destination="DDD-LN-gqg" id="jwA-hn-3Mr"/>
+                        <segue destination="WwE-fH-ynS" kind="custom" customClass="EmptySegue" id="nPM-fe-rGl"/>
+                        <segue destination="O6x-Tb-7Za" kind="custom" customClass="EmptySegue" id="MfF-4F-RVv"/>
+                        <segue destination="Chf-WN-mbh" kind="custom" customClass="EmptySegue" id="zAt-Hj-Q1K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rd-rU-7Qc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -888,7 +894,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1521" y="-418"/>
+            <point key="canvasLocation" x="1501" y="-411"/>
         </scene>
         <!--Bra Search View Controller - Brand Name-->
         <scene sceneID="RtL-Sc-bfJ">
@@ -936,7 +942,6 @@
                             <constraint firstAttribute="trailing" secondItem="nHW-VT-8Ck" secondAttribute="trailing" id="DYO-py-Vbg"/>
                             <constraint firstItem="nHW-VT-8Ck" firstAttribute="top" secondItem="Oee-Ps-oKE" secondAttribute="bottom" id="H4B-Pf-tpk"/>
                             <constraint firstItem="Skc-Rt-Cdl" firstAttribute="top" secondItem="nHW-VT-8Ck" secondAttribute="bottom" id="Qp8-bq-p4v"/>
-                            <constraint firstItem="nHW-VT-8Ck" firstAttribute="top" secondItem="Oee-Ps-oKE" secondAttribute="bottom" id="Qwr-zT-k6z"/>
                             <constraint firstItem="nHW-VT-8Ck" firstAttribute="leading" secondItem="R4p-W6-pGw" secondAttribute="leading" id="Rij-vi-emf"/>
                             <constraint firstAttribute="trailing" secondItem="Oee-Ps-oKE" secondAttribute="trailing" id="aAd-6s-2rG"/>
                             <constraint firstItem="Oee-Ps-oKE" firstAttribute="leading" secondItem="R4p-W6-pGw" secondAttribute="leading" id="fQh-ag-3bZ"/>
@@ -1013,9 +1018,9 @@
                             <constraint firstAttribute="trailing" secondItem="uKH-jX-oYS" secondAttribute="trailing" id="KgP-0W-hvv"/>
                             <constraint firstItem="L5W-2Q-68c" firstAttribute="top" secondItem="uKH-jX-oYS" secondAttribute="bottom" id="e8U-Rm-FIG"/>
                             <constraint firstItem="uKH-jX-oYS" firstAttribute="leading" secondItem="GNg-Dh-kyP" secondAttribute="leading" id="iH8-Qk-vR5"/>
-                            <constraint firstItem="L5W-2Q-68c" firstAttribute="top" secondItem="uKH-jX-oYS" secondAttribute="bottom" id="y4o-hr-Trh"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Therapuetic Class" id="7uP-rX-814"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="455"/>

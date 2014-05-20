@@ -32,46 +32,14 @@
     self.brandView = [self.storyboard instantiateViewControllerWithIdentifier:@"brandView"];
     self.therClassView = [self.storyboard instantiateViewControllerWithIdentifier:@"therClassView"];
     
-    //self.genericView.view.frame = self.subView.bounds;
+    self.genericView.view.frame = self.subView.bounds;
     self.placeHolderView = self.genericView;
     //self.subView = self.genericView.view;
     //[self.view insertSubview:self.placeHolderView.view belowSubview:self.tabBar];
-    [self.view addSubview:self.placeHolderView.view];
+    self.placeHolderView.view.autoresizingMask = self.subView.autoresizingMask;
+    [self.subView addSubview:self.placeHolderView.view];
     //[self changeConstraints];
     // Do any additional setup after loading the view.
-}
-
--(void)changeConstraints{
-    [super updateViewConstraints];
-    /*[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.placeHolderView.view
-                                                          attribute:NSLayoutAttributeTop
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeTop
-                                                         multiplier:1.0
-                                                           constant:0.0]];*/
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.placeHolderView.view
-                                                          attribute:NSLayoutAttributeLeading
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeLeading
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.placeHolderView.view
-                                                          attribute:NSLayoutAttributeTrailing
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.view
-                                                          attribute:NSLayoutAttributeTrailing
-                                                         multiplier:1.0
-                                                           constant:0.0]];
-    /*[self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.tabBar
-                                                          attribute:NSLayoutAttributeTop
-                                                          relatedBy:NSLayoutRelationEqual
-                                                             toItem:self.placeHolderView
-                                                          attribute:NSLayoutAttributeBottom
-                                                         multiplier:1.0
-                                                           constant:0.0]];*/
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -85,7 +53,9 @@
     if (item == self.genericName){
     //self.genericView.view.frame = self.subView.bounds;
     [self.placeHolderView.view removeFromSuperview];
-    [self.view addSubview:self.genericView.view];
+    self.genericView.view.frame = self.subView.bounds;
+    self.genericView.view.autoresizingMask = self.subView.autoresizingMask;
+    [self.subView addSubview:self.genericView.view];
     self.placeHolderView = self.genericView;
 
     }
@@ -93,15 +63,20 @@
     if (item == self.brandName){
         //self.brandView.view.frame = self.subView.bounds;
         [self.placeHolderView.view removeFromSuperview];
-        [self.view addSubview:self.brandView.view];
+        self.brandView.view.frame = self.subView.bounds;
+        self.brandView.view.autoresizingMask = self.subView.autoresizingMask;
+        [self.subView addSubview:self.brandView.view];
         self.placeHolderView = self.brandView;
     }
     
     if (item == self.therClass){
         //self.therClassView.view.frame = self.subView.bounds;
         [self.placeHolderView.view removeFromSuperview];
-        [self.view addSubview:self.therClassView.view];
+        self.therClassView.view.frame = self.subView.bounds;
+        self.therClassView.view.autoresizingMask = self.subView.autoresizingMask;
+        [self.subView addSubview:self.therClassView.view];
         self.placeHolderView = self.therClassView;
+        
     }
     else{
         
