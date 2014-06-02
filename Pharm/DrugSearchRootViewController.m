@@ -14,7 +14,7 @@
 
 @implementation DrugSearchRootViewController
 
-@synthesize genericName = _genericName, brandName = _brandName, therClass = _therClass, tabBar = _tabBar, selectedItem = _selectedItem, containerViewController = _containerViewController;
+@synthesize /*genericName = _genericName, brandName = _brandName, therClass = _therClass, */tabBar = _tabBar, /*selectedItem = _selectedItem, */containerViewController = _containerViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"containerView is currently %@", self.containerViewController);
 
     
     // Do any additional setup after loading the view.
@@ -40,32 +41,30 @@
 }
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
-    
-    NSLog(@"%@", item);
-    
-    NSLog(@"containerViewController is equal to %@", self.containerViewController);
-    
-    if (item == self.genericName){
-        self.containerViewController.selectedItem = @"genericName";
+    NSLog(@"%@",item.title);
+    self.containerViewController.selectedItem = item.title;
+    [self.containerViewController swapViewControllers];
+    //if (item.tag == 0){
 
-        [self.containerViewController swapViewControllers];
-    }
+    //}
     
-    if (item == self.brandName){
+    /*if (item.tag == 2){
         //self.brandView.view.frame = self.subView.bounds;
         self.containerViewController.selectedItem = @"brandName";
         [self.containerViewController swapViewControllers];
     }
     
-    if (item == self.therClass){
+    if (item.tag  == 1){
         self.containerViewController.selectedItem = @"therClass";
         [self.containerViewController swapViewControllers];
     }
     else{
+        NSLog(@"%@", item.title);
+        NSLog(@"Error");
         self.containerViewController.selectedItem = @"genericName";
         [self.containerViewController swapViewControllers];
         
-    }
+    }*/
     
 }
 
@@ -73,7 +72,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"embedSearchSegue"]){
         self.containerViewController = segue.destinationViewController;
-        self.containerViewController.selectedItem = @"genericName";
+        self.containerViewController.selectedItem = @"Generic Name";
         [self.containerViewController swapViewControllers];
     }
 }

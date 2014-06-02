@@ -14,11 +14,11 @@
 
 @property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 
-@property (weak, nonatomic) IBOutlet UITabBarItem *genericName;
-@property (weak, nonatomic) IBOutlet UITabBarItem *therClass;
-@property (weak, nonatomic) IBOutlet UITabBarItem *brandName;
+//@property (weak, nonatomic) IBOutlet UITabBarItem *genericName;
+//@property (weak, nonatomic) IBOutlet UITabBarItem *therClass;
+//@property (weak, nonatomic) IBOutlet UITabBarItem *brandName;
 
-@property (strong, nonatomic) NSString *selectedItem;
+//@property (strong, nonatomic) NSString *selectedItem;
 
 @property (strong, nonatomic) searchContainerViewController *containerViewController;
 

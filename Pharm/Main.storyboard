@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="t3F-m4-ddI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="t3F-m4-ddI">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -994,8 +994,8 @@
                                 </constraints>
                                 <items>
                                     <tabBarItem title="Generic Name" id="6OU-N1-i6p"/>
-                                    <tabBarItem title="Therapuetic Class" id="DDD-LN-gqg"/>
-                                    <tabBarItem title="Brand Name" id="ELY-dV-Ynb"/>
+                                    <tabBarItem tag="1" title="Therapuetic Class" id="DDD-LN-gqg"/>
+                                    <tabBarItem tag="2" title="Brand Name" id="ELY-dV-Ynb"/>
                                 </items>
                                 <connections>
                                     <outlet property="delegate" destination="bSs-1J-3id" id="I0K-gs-Afp"/>
@@ -1020,11 +1020,8 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="NP7-tw-cKK"/>
                     <connections>
-                        <outlet property="brandName" destination="ELY-dV-Ynb" id="Ji2-iC-iUN"/>
-                        <outlet property="genericName" destination="6OU-N1-i6p" id="6R9-SM-PNn"/>
                         <outlet property="searchDisplayController" destination="fz9-ia-J1U" id="ccp-G9-grB"/>
                         <outlet property="tabBar" destination="Z1f-M6-oYf" id="Aws-No-dDJ"/>
-                        <outlet property="therClass" destination="DDD-LN-gqg" id="jwA-hn-3Mr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rd-rU-7Qc" userLabel="First Responder" sceneMemberID="firstResponder"/>

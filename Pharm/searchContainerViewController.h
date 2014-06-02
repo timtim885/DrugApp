@@ -7,11 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "GenSearchViewController.h"
+#import "BraSearchViewController.h"
+#import "TherClassSearchViewController.h"
 
 @interface searchContainerViewController : UIViewController
 
 @property (strong, nonatomic) NSString *selectedItem;
 
+@property (strong, nonatomic) NSString *currentSegueIdentifier;
+@property (assign, nonatomic) BOOL transitionInProgress;
+
+@property (strong, nonatomic) UIViewController *currentlySelectedViewController;
+
+@property (strong, nonatomic) GenSearchViewController *firstViewController;
+@property (strong, nonatomic) BraSearchViewController *secondViewController;
+@property (strong, nonatomic) TherClassSearchViewController *thirdViewController;
+
 -(void)swapViewControllers;
+
 @end
