@@ -14,7 +14,7 @@
 
 @implementation DrugSearchRootViewController
 
-@synthesize genericName = _genericName, brandName = _brandName, therClass = _therClass, subView = _subView, genericView = _genericView, brandView = _brandView, therClassView = _therClassView, placeHolderView = _placeHolderView;
+@synthesize genericName = _genericName, brandName = _brandName, therClass = _therClass, tabBar = _tabBar, selectedItem = _selectedItem, containerViewController = _containerViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,17 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.genericView = [self.storyboard instantiateViewControllerWithIdentifier:@"genericView"];
-    self.brandView = [self.storyboard instantiateViewControllerWithIdentifier:@"brandView"];
-    self.therClassView = [self.storyboard instantiateViewControllerWithIdentifier:@"therClassView"];
+
     
-    self.genericView.view.frame = self.subView.bounds;
-    self.placeHolderView = self.genericView;
-    //self.subView = self.genericView.view;
-    //[self.view insertSubview:self.placeHolderView.view belowSubview:self.tabBar];
-    self.placeHolderView.view.autoresizingMask = self.subView.autoresizingMask;
-    [self.subView addSubview:self.placeHolderView.view];
-    //[self changeConstraints];
     // Do any additional setup after loading the view.
 }
 
@@ -50,39 +41,43 @@
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
     
+    NSLog(@"%@", item);
+    
+    NSLog(@"containerViewController is equal to %@", self.containerViewController);
+    
     if (item == self.genericName){
-    //self.genericView.view.frame = self.subView.bounds;
-    [self.placeHolderView.view removeFromSuperview];
-    self.genericView.view.frame = self.subView.bounds;
-    self.genericView.view.autoresizingMask = self.subView.autoresizingMask;
-    [self.subView addSubview:self.genericView.view];
-    self.placeHolderView = self.genericView;
+        self.containerViewController.selectedItem = @"genericName";
 
+        [self.containerViewController swapViewControllers];
     }
     
     if (item == self.brandName){
         //self.brandView.view.frame = self.subView.bounds;
-        [self.placeHolderView.view removeFromSuperview];
-        self.brandView.view.frame = self.subView.bounds;
-        self.brandView.view.autoresizingMask = self.subView.autoresizingMask;
-        [self.subView addSubview:self.brandView.view];
-        self.placeHolderView = self.brandView;
+        self.containerViewController.selectedItem = @"brandName";
+        [self.containerViewController swapViewControllers];
     }
     
     if (item == self.therClass){
-        //self.therClassView.view.frame = self.subView.bounds;
-        [self.placeHolderView.view removeFromSuperview];
-        self.therClassView.view.frame = self.subView.bounds;
-        self.therClassView.view.autoresizingMask = self.subView.autoresizingMask;
-        [self.subView addSubview:self.therClassView.view];
-        self.placeHolderView = self.therClassView;
-        
+        self.containerViewController.selectedItem = @"therClass";
+        [self.containerViewController swapViewControllers];
     }
     else{
+        self.containerViewController.selectedItem = @"genericName";
+        [self.containerViewController swapViewControllers];
         
     }
     
 }
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"embedSearchSegue"]){
+        self.containerViewController = segue.destinationViewController;
+        self.containerViewController.selectedItem = @"genericName";
+        [self.containerViewController swapViewControllers];
+    }
+}
+
 
 /*
 #pragma mark - Navigation
@@ -94,5 +89,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end

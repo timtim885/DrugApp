@@ -9,7 +9,7 @@
 #import "FlashCardFrontVC.h"
 
 @interface FlashCardFrontVC ()
-
+@property (weak, nonatomic) IBOutlet UILabel *genericNameLbl;
 @end
 
 @implementation FlashCardFrontVC

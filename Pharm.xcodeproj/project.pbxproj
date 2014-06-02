@@ -43,6 +43,7 @@
 		92DF5EF518DB549600C31F87 /* QuizVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DF5EF418DB549600C31F87 /* QuizVC.m */; };
 		92DF5EF818DB54AE00C31F87 /* Scoring.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DF5EF718DB54AE00C31F87 /* Scoring.m */; };
 		A69A905218EB9B8D00E69EF3 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = A69A905118EB9B8D00E69EF3 /* Question.m */; };
+		A6C5A6541938FA010051091A /* searchContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C5A6531938FA010051091A /* searchContainerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,8 @@
 		92DF5EF718DB54AE00C31F87 /* Scoring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scoring.m; sourceTree = "<group>"; };
 		A69A905018EB9B8D00E69EF3 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
 		A69A905118EB9B8D00E69EF3 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		A6C5A6521938FA010051091A /* searchContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchContainerViewController.h; sourceTree = "<group>"; };
+		A6C5A6531938FA010051091A /* searchContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchContainerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +241,8 @@
 			children = (
 				922F69CE192537D6001E4C6D /* DrugSearchRootViewController.h */,
 				922F69CF192537D6001E4C6D /* DrugSearchRootViewController.m */,
+				A6C5A6521938FA010051091A /* searchContainerViewController.h */,
+				A6C5A6531938FA010051091A /* searchContainerViewController.m */,
 				925C8D0C191AD4E3008E55E6 /* ContainerViewController.h */,
 				925C8D0D191AD4E3008E55E6 /* ContainerViewController.m */,
 				925C8D0E191AD4E3008E55E6 /* FlashCardFrontVC.h */,
@@ -395,6 +400,7 @@
 				92A2D9A818C7950B00804F14 /* Drug.m in Sources */,
 				92A2D96B18C790BB00804F14 /* main.m in Sources */,
 				92A2D97218C790BB00804F14 /* Pharm.xcdatamodeld in Sources */,
+				A6C5A6541938FA010051091A /* searchContainerViewController.m in Sources */,
 				922F69D0192537D6001E4C6D /* DrugSearchRootViewController.m in Sources */,
 				A69A905218EB9B8D00E69EF3 /* Question.m in Sources */,
 				92A2D9A118C7942B00804F14 /* GenSearchViewController.m in Sources */,

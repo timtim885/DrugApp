@@ -13,6 +13,6 @@
 
 -(void)setupViewWithDrug:(Drug *)selectedDrug;
 
-@property (weak, nonatomic) IBOutlet UILabel *genericNameLbl;
+//@property (weak, nonatomic) IBOutlet UILabel *genericNameLbl;
 
 @end
