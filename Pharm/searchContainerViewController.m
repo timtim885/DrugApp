@@ -23,7 +23,7 @@
 
 @implementation searchContainerViewController
 
-static BOOL viewDidLoadFirstRun;
+//static BOOL viewDidLoadFirstRun;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,13 +38,11 @@ static BOOL viewDidLoadFirstRun;
 {
     [super viewDidLoad];
     self.transitionInProgress = NO;
-    if (!viewDidLoadFirstRun){
-        viewDidLoadFirstRun = YES;
-        self.currentSegueIdentifier = SegueIdentifierFirst;
+    if (!self.viewDidLoadFirstRun){
+        //self.currentSegueIdentifier = SegueIdentifierFirst;
         //self.currentlySelectedViewController = self.firstViewController;
-        //self.selectedItem = @"Generic Name";
-        //[self swapViewControllers];
-
+        self.selectedItem = @"Generic Name";
+        [self swapViewControllers];
     }else{
         
     }
@@ -55,7 +53,6 @@ static BOOL viewDidLoadFirstRun;
 
     // Do any additional setup after loading the view.
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -65,7 +62,7 @@ static BOOL viewDidLoadFirstRun;
 
 -(void)swapViewControllers{
     {
-        if (self.transitionInProgress) {
+        if (self.transitionInProgress == YES) {
             return;
         }
         
@@ -117,17 +114,20 @@ static BOOL viewDidLoadFirstRun;
         if (!self.firstViewController){
             self.firstViewController = segue.destinationViewController;
         }
-        if (!viewDidLoadFirstRun){
+        if (!self.viewDidLoadFirstRun){
                 NSLog(@"Ran else on firstident");
                 // If this is the very first time we're loading this we need to do
                 // an initial load and not a swap.
-                [self addChildViewController:segue.destinationViewController];
-                UIView* destView = ((UIViewController *)segue.destinationViewController).view;
-                destView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-                destView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-                [self.view addSubview:destView];
-                [segue.destinationViewController didMoveToParentViewController:self];
+                [self addChildViewController:self.firstViewController];
+                //UIView* destView = ((UIViewController *)segue.destinationViewController).view;
+                self.firstViewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+                self.firstViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+                [self.view addSubview:self.firstViewController.view];
+                [self.firstViewController/*segue.destinationViewController */didMoveToParentViewController:self];
                 self.currentlySelectedViewController = self.firstViewController;
+                self.viewDidLoadFirstRun = YES;
+                self.transitionInProgress = NO;
+            //[self swapFromViewController:segue.destinationViewController toViewController:self.firstViewController];
         }
         else{
             [self swapFromViewController:self.currentlySelectedViewController toViewController:self.firstViewController];
@@ -192,7 +192,6 @@ static BOOL viewDidLoadFirstRun;
         self.currentlySelectedViewController = self.thirdViewController;
 
     }*/
-    self.transitionInProgress = NO;
     NSLog(@"currentlySelectedViewController is %@", self.currentlySelectedViewController);
     NSLog(@"currentSegueIdentifier is %@", self.currentSegueIdentifier);
     NSLog(@"selectedItem is %@", self.selectedItem);
@@ -208,7 +207,7 @@ static BOOL viewDidLoadFirstRun;
     
     [fromViewController willMoveToParentViewController:nil];
     [self addChildViewController:toViewController];
-            [self transitionFromViewController:fromViewController toViewController:toViewController duration:1.0 options:UIViewAnimationOptionTransitionNone animations:nil completion:^(BOOL finished) {
+    [self transitionFromViewController:fromViewController toViewController:toViewController duration:0.3 options:UIViewAnimationOptionTransitionNone animations:^{} completion:^(BOOL finished) {
             [fromViewController removeFromParentViewController];
             [toViewController didMoveToParentViewController:self];
             self.transitionInProgress = NO;

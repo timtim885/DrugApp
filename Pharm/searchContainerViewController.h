@@ -24,6 +24,8 @@
 @property (strong, nonatomic) BraSearchViewController *secondViewController;
 @property (strong, nonatomic) TherClassSearchViewController *thirdViewController;
 
+@property BOOL viewDidLoadFirstRun;
+
 -(void)swapViewControllers;
 
 @end

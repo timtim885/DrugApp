@@ -28,7 +28,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"containerView is currently %@", self.containerViewController);
 
     
     // Do any additional setup after loading the view.
@@ -72,7 +71,8 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"embedSearchSegue"]){
         self.containerViewController = segue.destinationViewController;
-        self.containerViewController.selectedItem = @"Generic Name";
+        //self.containerViewController.selectedItem = @"Generic Name";
+        //self.containerViewController.currentSegueIdentifier = @"None";
         [self.containerViewController swapViewControllers];
     }
 }
