@@ -40,7 +40,6 @@
 }
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
-    NSLog(@"%@",item.title);
     self.containerViewController.selectedItem = item.title;
     [self.containerViewController swapViewControllers];
     //if (item.tag == 0){

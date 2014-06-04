@@ -192,9 +192,6 @@
         self.currentlySelectedViewController = self.thirdViewController;
 
     }*/
-    NSLog(@"currentlySelectedViewController is %@", self.currentlySelectedViewController);
-    NSLog(@"currentSegueIdentifier is %@", self.currentSegueIdentifier);
-    NSLog(@"selectedItem is %@", self.selectedItem);
 
     
 }
@@ -204,6 +201,7 @@
 - (void)swapFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController
 {
     toViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+     toViewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
     [fromViewController willMoveToParentViewController:nil];
     [self addChildViewController:toViewController];
