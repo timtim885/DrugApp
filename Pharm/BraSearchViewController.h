@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BraSearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
-
+@interface BraSearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, NSFetchedResultsControllerDelegate>
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

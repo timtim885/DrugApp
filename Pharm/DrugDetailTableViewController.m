@@ -33,6 +33,8 @@
 }
 
 - (IBAction)savePressed:(id)sender {
+    // !self.genericNameField.text
+    
     self.selectedDrug.genericName = self.genericNameField.text;
     self.selectedDrug.brandName = self.brandNameField.text;
     self.selectedDrug.therapueticClass = self.therapueticClassField.text;
