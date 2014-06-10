@@ -115,4 +115,16 @@ static NSMutableArray *flashcardList;
 }*/
 
 
+-(void)removeFromList:(Drug *)drug{
+    if ([self drugIsInArray:drug]){
+        
+        [flashcardList removeObject:drug];
+        
+    }else{
+        
+    }
+}
+
+
+
 @end

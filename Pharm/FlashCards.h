@@ -26,6 +26,7 @@
 -(NSUInteger)countCards;
 -(NSMutableArray *)getList;
 -(BOOL)drugIsInArray:(Drug *)drug;
+-(void)removeFromList:(Drug *)drug;
 
 
 
