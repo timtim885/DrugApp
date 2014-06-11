@@ -22,9 +22,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 
-- (IBAction)editList:(id)sender;
-
-
 
     
     

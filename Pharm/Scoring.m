@@ -26,5 +26,10 @@
     
 }
 
+-(void)setZeroes{
+    self.totalCorrAns = 0;
+    self.totalQsAns = 0;
+}
+
 
 @end

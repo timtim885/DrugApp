@@ -21,5 +21,7 @@
 -(void)totalAns;
 -(void)rightAns;
 
+-(void)setZeroes;
+
 
 @end

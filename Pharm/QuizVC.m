@@ -17,7 +17,6 @@
 
 @implementation QuizVC
 
-static int quizQuestions = 0;
 
 @synthesize nextQuestion, questionLbl;
 
@@ -36,6 +35,8 @@ static int quizQuestions = 0;
 
 - (void)viewDidLoad
 {
+    NSLog (@"Total qsans is %ld", self.quizScore.totalQsAns);
+    NSLog (@"Total anscorr is %ld", self.quizScore.totalCorrAns);
     [super viewDidLoad];
     //[self makeQuestion];
     [totalQs setText:[NSString stringWithFormat:@"%ld", [quizScore totalQsAns]]];
@@ -57,7 +58,6 @@ static int quizQuestions = 0;
 
 
 -(void)makeQuestion{
-    quizQuestions++;
     nextQuestion = [[Question alloc] init];
     if (quizScore == nil){
         quizScore = [[Scoring alloc] init];
@@ -104,7 +104,7 @@ static int quizQuestions = 0;
         
         [quizNextVC setQuizScore:self.quizScore];
         UINavigationController *navController = self.navigationController;
-        if (quizQuestions > 9) {
+        if (self.quizScore.totalQsAns > 9) {
             [self endQuiz];
         }else{
         [navController popViewControllerAnimated:NO];
@@ -120,7 +120,7 @@ static int quizQuestions = 0;
         QuizVC *quizNextVC = [storyboard instantiateViewControllerWithIdentifier:@"QuizVCon"];
         [quizNextVC setQuizScore:self.quizScore];
         UINavigationController *navController = self.navigationController;
-        if (quizQuestions > 9) {
+        if (self.quizScore.totalQsAns > 9) {
             [self endQuiz];
         }else{
         [navController popViewControllerAnimated:NO];
@@ -132,7 +132,6 @@ static int quizQuestions = 0;
 
 -(void)endQuiz{
     self.scoreResults = [NSString stringWithFormat:@"Your score:  %ld / %ld", [self.quizScore totalCorrAns], [self.quizScore totalQsAns]];
-    quizQuestions = 0;
     UIAlertView *endAlert = [[UIAlertView alloc] initWithTitle:@"End of quiz." message:self.scoreResults delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [endAlert show];
     [self.navigationController popViewControllerAnimated:TRUE];

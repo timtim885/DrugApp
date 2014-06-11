@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 UOP. All rights reserved.
 //
 
-#import "DrugSearchRootViewController.h"
+#import "DrugBrowseRootViewController.h"
 
-@interface DrugSearchRootViewController ()
+@interface DrugBrowseRootViewController ()
 
 @end
 
-@implementation DrugSearchRootViewController
+@implementation DrugBrowseRootViewController
 
 @synthesize /*genericName = _genericName, brandName = _brandName, therClass = _therClass, */tabBar = _tabBar, /*selectedItem = _selectedItem, */containerViewController = _containerViewController;
 

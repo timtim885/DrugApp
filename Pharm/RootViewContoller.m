@@ -9,6 +9,7 @@
 #import "RootViewContoller.h"
 #import "Drug.h"
 #import "DrugAppAppDelegate.h"
+#import "QuizVC.h"
 
 
 @interface RootViewContoller ()
@@ -49,6 +50,16 @@
 
     }else{
     [self performSegueWithIdentifier:@"goQuizIdentifier" sender:self];
+    }
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([segue.identifier  isEqual: @"goQuizIdentifier"]){
+        NSLog(@"Ran prepareforsegue");
+        QuizVC *quiz = [segue destinationViewController];
+        [quiz.quizScore setZeroes];
     }
 }
     

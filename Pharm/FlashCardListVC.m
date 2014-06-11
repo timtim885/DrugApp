@@ -33,6 +33,10 @@
 	// Do any additional setup after loading the view.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -76,9 +80,6 @@
     }
 }
 
-- (IBAction)editList:(id)sender {
-    [self.tableView setEditing:YES animated:YES];
-}
 
 
 @end

@@ -1,27 +1,26 @@
 //
-//  AddFlashcards.m
+//  DrugSearchVC.m
 //  Pharm
 //
-//  Created by phsit on 6/10/14.
+//  Created by phsit on 6/11/14.
 //  Copyright (c) 2014 UOP. All rights reserved.
 //
 
-#import "AddFlashcardsVC.h"
+#import "DrugSearchVC.h"
 #import "DrugAppAppDelegate.h"
 #import "Drug.h"
 #import "DrugDetailTableViewController.h"
 
-@interface AddFlashcardsVC ()
+@interface DrugSearchVC ()
 @property (nonatomic, strong) NSArray *fetchedDrugsArray;
 @property (nonatomic, strong) NSArray *filteredDrugsSearch;
 
-@property (nonatomic, strong) Drug *selectedDrug;
+
+
 
 @end
 
-
-@implementation AddFlashcardsVC
-@synthesize flashCard = _flashCard;
+@implementation DrugSearchVC
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,7 +34,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.flashCard = [[FlashCards alloc] init];
     //[_tableView setTableHeaderView: _searchBar];
     DrugAppAppDelegate  *appDelegate = [UIApplication sharedApplication].delegate;
     self.fetchedDrugsArray = [appDelegate getAllDrugEntries];
@@ -72,11 +70,9 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (!self.flashCard){
-        self.flashCard = [[FlashCards alloc] init];
-    }
+    static NSString *cellIdentifier = @"searchDrugCell";
     
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"flashCardCell"
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier
                                                                  forIndexPath:indexPath];
     
     if (tableView == self.searchDisplayController.searchResultsTableView){
@@ -84,70 +80,28 @@
         Drug *drug = [self.filteredDrugsSearch objectAtIndex:indexPath.row];
         cell.textLabel.text = [NSString stringWithFormat:@"%@",drug.genericName];
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", drug.brandName];
-        if ([self.flashCard drugIsInArray:drug]){
-            [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
-            //cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        }else{
-            [cell setAccessoryType:UITableViewCellAccessoryNone];
-            //cell.accessoryType = UITableViewCellAccessoryNone;
-        }
         
     }else{
         
         Drug *drug = [self.fetchedDrugsArray objectAtIndex:indexPath.row];
         cell.textLabel.text = [NSString stringWithFormat:@"%@",drug.genericName];
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", drug.brandName];
-        if ([self.flashCard drugIsInArray: drug]){
-            [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
-        }else{
-            [cell setAccessoryType:UITableViewCellAccessoryNone];
-            //cell.accessoryType = UITableViewCellAccessoryNone;
-        }
-
     }
     
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    
-    //UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"flashCardCell" forIndexPath:indexPath];
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSLog(@"Ran.");
+    DrugDetailTableViewController *detailController = [self.storyboard instantiateViewControllerWithIdentifier:@"DrugDetailVCIdentifier"];
     
     if (tableView == self.searchDisplayController.searchResultsTableView){
-        self.selectedDrug = [self.filteredDrugsSearch objectAtIndex:indexPath.row];
+        detailController.selectedDrug = [self.filteredDrugsSearch objectAtIndex:indexPath.row];
         
     }else{
-        self.selectedDrug = [self.fetchedDrugsArray objectAtIndex:indexPath.row];
+        detailController.selectedDrug = [self.fetchedDrugsArray objectAtIndex:indexPath.row];
     }
     
-    
-    if ([self.flashCard drugIsInArray:self.selectedDrug]){
-        [self.flashCard removeFromList:self.selectedDrug];
-        [cell setAccessoryType:UITableViewCellAccessoryNone];
-        //cell.accessoryType = UITableViewCellAccessoryNone;
-        /*
-        UIAlertView *fcError = [[UIAlertView alloc] initWithTitle:@"Flashcard already added!"
-                                                          message:@"Drug is already in flashcard list."
-                                                         delegate:nil
-                                                cancelButtonTitle:@"OK"
-                                                otherButtonTitles:nil];
-            [fcError show];*/
-            
-    }else{
-            [self.flashCard addToList:self.selectedDrug];
-            /*UIAlertView *fcAlert = [[UIAlertView alloc] initWithTitle:@"Flashcard added!" message:@"Drug added to flashcards." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [fcAlert show];*/
-            
-            [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
-            //cell.accessoryType = UITableViewCellAccessoryCheckmark;
-            
-            
-        }
-
-
-    [self.tableView reloadData];
-        
+    [self.navigationController pushViewController:detailController animated:YES];
 }
 
 
@@ -188,7 +142,7 @@
 
 -(void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
-    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"genericName contains[c] %@", searchText];
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"(genericName contains[c] %@) OR (brandName contains[c] %@) OR (therapueticClass contains[c] %@) OR (beersList contains[c] %@) OR (blackBoxWarning contains[c] %@) OR (commonAdverseEffects contains[c] %@) OR (commonPurpose contains[c] %@) OR (dosing contains[c] %@) OR (keyPoint contains[c] %@)", searchText, searchText, searchText, searchText, searchText, searchText, searchText, searchText, searchText];
     _filteredDrugsSearch = [self.fetchedDrugsArray filteredArrayUsingPredicate:resultPredicate];
 }
 
@@ -202,3 +156,4 @@
 
 
 @end
+

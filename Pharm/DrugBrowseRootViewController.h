@@ -10,7 +10,7 @@
 
 #import "searchContainerViewController.h"
 
-@interface DrugSearchRootViewController : UIViewController <UITabBarDelegate>
+@interface DrugBrowseRootViewController : UIViewController <UITabBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 
