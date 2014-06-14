@@ -43,7 +43,7 @@
     [super viewDidLoad];
     //[_tableView setTableHeaderView: _searchBar];
     DrugAppAppDelegate  *appDelegate = [UIApplication sharedApplication].delegate;
-    self.fetchedDrugsArray = [appDelegate getAllDrugEntries];
+    self.fetchedDrugsArray = [appDelegate getUniqueClassDrugEntries];
     [self.tableView reloadData];
     
 	// Do any additional setup after loading the view.
@@ -51,7 +51,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     DrugAppAppDelegate  *appDelegate = [UIApplication sharedApplication].delegate;
-    self.fetchedDrugsArray = [appDelegate getAllDrugEntries];
+    self.fetchedDrugsArray = [appDelegate getUniqueClassDrugEntries];
     [self.tableView reloadData];
 }
 
@@ -84,13 +84,17 @@
     
     if (tableView == self.searchDisplayController.searchResultsTableView){
         
-        Drug *drug = [self.filteredDrugsSearch objectAtIndex:indexPath.row];
-        cell.textLabel.text = [NSString stringWithFormat:@"%@",drug.therapueticClass];
+        NSDictionary *dict = [self.filteredDrugsSearch objectAtIndex:indexPath.row];
+        cell.textLabel.text = [dict objectForKey:@"therapueticClass"];
+        //cell.textLabel.text = [NSString stringWithFormat:@"%@",drug.therapueticClass];
         
     }else{
+        NSLog(@"%@", self.fetchedDrugsArray);
+        NSDictionary *dict = [self.fetchedDrugsArray objectAtIndex:indexPath.row];
+        //Drug *drug = [self.fetchedDrugsArray objectAtIndex:indexPath.row];
+        //cell.textLabel.text = [NSString stringWithFormat:@"%@",drug.therapueticClass];
+        cell.textLabel.text = [dict objectForKey:@"therapueticClass"];
         
-        Drug *drug = [self.fetchedDrugsArray objectAtIndex:indexPath.row];
-        cell.textLabel.text = [NSString stringWithFormat:@"%@",drug.therapueticClass];
     }
     
     return cell;
@@ -148,7 +152,7 @@
 -(void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
     NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"therapueticClass contains[c] %@", searchText];
-    _filteredDrugsSearch = [self.fetchedDrugsArray filteredArrayUsingPredicate:resultPredicate];
+    self.filteredDrugsSearch = [self.fetchedDrugsArray filteredArrayUsingPredicate:resultPredicate];
 }
 
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString

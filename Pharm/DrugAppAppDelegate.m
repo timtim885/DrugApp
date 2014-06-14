@@ -163,5 +163,27 @@
     return fetchedDrugs;
 }
 
+-(NSArray *)getUniqueClassDrugEntries{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Drug"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    [fetchRequest setResultType:NSDictionaryResultType];
+    //NSDictionary *entityProperties = [entity propertiesByName];
+    [fetchRequest setReturnsDistinctResults:YES];
+    [fetchRequest setPropertiesToFetch:[NSArray arrayWithObjects:@"therapueticClass", nil]];
+    
+    NSError *error;
+    NSArray *fetchedUniqueClass = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if (!fetchedUniqueClass.count || !fetchedUniqueClass) {
+        self.classFetchError = TRUE;
+    }else{
+        self.classFetchError = FALSE;
+    }
+    return fetchedUniqueClass;
+    
+}
+
+
 
 @end
