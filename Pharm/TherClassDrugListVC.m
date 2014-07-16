@@ -14,6 +14,7 @@
 @interface TherClassDrugListVC ()
 @property (nonatomic, strong) NSArray *fetchedDrugsArray;
 @property (nonatomic, strong) NSArray *filteredDrugsSearch;
+@property (nonatomic, strong) NSArray *therClassList;
 
 @end
 
@@ -34,7 +35,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    //[_tableView setTableHeaderView: _searchBar];
+    DrugAppAppDelegate  *appDelegate = [UIApplication sharedApplication].delegate;
+    self.fetchedDrugsArray = [appDelegate getUniqueClassDrugEntries];
+    [self createTherClassList:self.selectedDrug];
+    [self.tableView reloadData];
+    
+	// Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    DrugAppAppDelegate  *appDelegate = [UIApplication sharedApplication].delegate;
+    self.fetchedDrugsArray = [appDelegate getUniqueClassDrugEntries];
+    [self createTherClassList:self.selectedDrug];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,7 +56,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 /*
 #pragma mark - Navigation
 
@@ -64,7 +77,7 @@
     if (tableView == self.searchDisplayController.searchResultsTableView){
         return [self.filteredDrugsSearch count];
     }else{
-        return [self.fetchedDrugsArray count];
+        return [self.therClassList count];
     }
     
 }
@@ -82,7 +95,7 @@
         
     }else{
         
-        Drug *drug = [self.fetchedDrugsArray objectAtIndex:indexPath.row];
+        Drug *drug = [self.therClassList objectAtIndex:indexPath.row];
         cell.textLabel.text = [NSString stringWithFormat:@"%@",drug.genericName];
     }
     
@@ -96,10 +109,33 @@
         detailController.selectedDrug = [self.filteredDrugsSearch objectAtIndex:indexPath.row];
         
     }else{
-        detailController.selectedDrug = [self.fetchedDrugsArray objectAtIndex:indexPath.row];
+        detailController.selectedDrug = [self.therClassList objectAtIndex:indexPath.row];
     }
     
     [self.navigationController pushViewController:detailController animated:YES];
 }
+
+
+-(void)createTherClassList:(NSString*)searchText
+{
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"therapueticClass contains[c] %@", searchText];
+    self.therClassList = [self.fetchedDrugsArray filteredArrayUsingPredicate:resultPredicate];
+}
+
+-(void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"therapueticClass contains[c] %@", searchText];
+    self.filteredDrugsSearch = [self.therClassList filteredArrayUsingPredicate:resultPredicate];
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString scope:[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    
+    return YES;
+    
+}
+
+
 
 @end

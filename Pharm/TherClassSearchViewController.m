@@ -17,6 +17,7 @@
 #import "DrugAppAppDelegate.h"
 #import "Drug.h"
 #import "DrugDetailTableViewController.h"
+#import "TherClassDrugListVC.h"
 
 @interface TherClassSearchViewController ()
 @property (nonatomic, strong) NSArray *fetchedDrugsArray;
@@ -101,13 +102,15 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"Ran.");
-    DrugDetailTableViewController *detailController = [self.storyboard instantiateViewControllerWithIdentifier:@"DrugDetailVCIdentifier"];
+    TherClassDrugListVC *detailController = [self.storyboard instantiateViewControllerWithIdentifier:@"DrugDetailVCIdentifier"];
     
     if (tableView == self.searchDisplayController.searchResultsTableView){
-        detailController.selectedDrug = [self.filteredDrugsSearch objectAtIndex:indexPath.row];
+        NSDictionary *dict = [self.filteredDrugsSearch objectAtIndex:indexPath.row];
+        detailController.selectedDrug = [dict objectForKey:@"therapueticClass"];
         
     }else{
-        detailController.selectedDrug = [self.fetchedDrugsArray objectAtIndex:indexPath.row];
+        NSDictionary *dict = [self.fetchedDrugsArray objectAtIndex:indexPath.row];
+        detailController.selectedDrug = [dict objectForKey:@"therapueticClass"];
     }
     
     [self.navigationController pushViewController:detailController animated:YES];

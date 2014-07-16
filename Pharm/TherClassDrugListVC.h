@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Drug.h"
 
 @interface TherClassDrugListVC : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, NSFetchedResultsControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
+@property (nonatomic, strong) NSString *selectedDrug;
 
 
 @end
