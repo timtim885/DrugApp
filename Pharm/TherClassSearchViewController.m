@@ -90,7 +90,6 @@
         //cell.textLabel.text = [NSString stringWithFormat:@"%@",drug.therapueticClass];
         
     }else{
-        NSLog(@"%@", self.fetchedDrugsArray);
         NSDictionary *dict = [self.fetchedDrugsArray objectAtIndex:indexPath.row];
         //Drug *drug = [self.fetchedDrugsArray objectAtIndex:indexPath.row];
         //cell.textLabel.text = [NSString stringWithFormat:@"%@",drug.therapueticClass];
@@ -101,8 +100,7 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"Ran.");
-    TherClassDrugListVC *detailController = [self.storyboard instantiateViewControllerWithIdentifier:@"DrugDetailVCIdentifier"];
+    TherClassDrugListVC *detailController = [self.storyboard instantiateViewControllerWithIdentifier:@"TherClassDrugList"];
     
     if (tableView == self.searchDisplayController.searchResultsTableView){
         NSDictionary *dict = [self.filteredDrugsSearch objectAtIndex:indexPath.row];

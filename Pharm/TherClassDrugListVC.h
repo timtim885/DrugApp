@@ -15,5 +15,7 @@
 
 @property (nonatomic, strong) NSString *selectedDrug;
 
+-(void)createTherClassList;
+
 
 @end

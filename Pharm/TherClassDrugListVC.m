@@ -37,8 +37,8 @@
     [super viewDidLoad];
     //[_tableView setTableHeaderView: _searchBar];
     DrugAppAppDelegate  *appDelegate = [UIApplication sharedApplication].delegate;
-    self.fetchedDrugsArray = [appDelegate getUniqueClassDrugEntries];
-    [self createTherClassList:self.selectedDrug];
+    self.fetchedDrugsArray = [appDelegate getAllDrugEntries];
+    [self createTherClassList];
     [self.tableView reloadData];
     
 	// Do any additional setup after loading the view.
@@ -46,8 +46,8 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     DrugAppAppDelegate  *appDelegate = [UIApplication sharedApplication].delegate;
-    self.fetchedDrugsArray = [appDelegate getUniqueClassDrugEntries];
-    [self createTherClassList:self.selectedDrug];
+    self.fetchedDrugsArray = [appDelegate getAllDrugEntries];
+    [self createTherClassList];
     [self.tableView reloadData];
 }
 
@@ -102,7 +102,6 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"Ran.");
     DrugDetailTableViewController *detailController = [self.storyboard instantiateViewControllerWithIdentifier:@"DrugDetailVCIdentifier"];
     
     if (tableView == self.searchDisplayController.searchResultsTableView){
@@ -116,9 +115,9 @@
 }
 
 
--(void)createTherClassList:(NSString*)searchText
+-(void)createTherClassList
 {
-    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"therapueticClass contains[c] %@", searchText];
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"therapueticClass contains %@", self.selectedDrug];
     self.therClassList = [self.fetchedDrugsArray filteredArrayUsingPredicate:resultPredicate];
 }
 

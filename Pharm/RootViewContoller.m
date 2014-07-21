@@ -57,7 +57,6 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     if ([segue.identifier  isEqual: @"goQuizIdentifier"]){
-        NSLog(@"Ran prepareforsegue");
         QuizVC *quiz = [segue destinationViewController];
         [quiz.quizScore setZeroes];
     }

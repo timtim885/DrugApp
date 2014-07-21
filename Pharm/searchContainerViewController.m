@@ -115,7 +115,6 @@
             self.firstViewController = segue.destinationViewController;
         }
         if (!self.viewDidLoadFirstRun){
-                NSLog(@"Ran else on firstident");
                 // If this is the very first time we're loading this we need to do
                 // an initial load and not a swap.
                 [self addChildViewController:self.firstViewController];

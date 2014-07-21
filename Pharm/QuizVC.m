@@ -35,8 +35,8 @@
 
 - (void)viewDidLoad
 {
-    NSLog (@"Total qsans is %ld", self.quizScore.totalQsAns);
-    NSLog (@"Total anscorr is %ld", self.quizScore.totalCorrAns);
+    //NSLog (@"Total qsans is %ld", self.quizScore.totalQsAns);
+    //NSLog (@"Total anscorr is %ld", self.quizScore.totalCorrAns);
     [super viewDidLoad];
     //[self makeQuestion];
     [totalQs setText:[NSString stringWithFormat:@"%ld", [quizScore totalQsAns]]];
