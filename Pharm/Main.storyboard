@@ -238,8 +238,8 @@
                                     <action selector="nextCard:" destination="Nq0-dk-bxa" eventType="touchUpInside" id="doi-0B-q1I"/>
                                 </connections>
                             </button>
-                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SWj-aQ-yII">
-                                <rect key="frame" x="20" y="89" width="280" height="421"/>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWj-aQ-yII">
+                                <rect key="frame" x="20" y="74" width="280" height="340"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
@@ -248,6 +248,12 @@
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0ab-kG-4cb" firstAttribute="top" secondItem="SWj-aQ-yII" secondAttribute="bottom" constant="66" id="0hq-d4-irt"/>
+                            <constraint firstAttribute="trailing" secondItem="SWj-aQ-yII" secondAttribute="trailing" constant="20" id="9Ch-eg-bYe"/>
+                            <constraint firstItem="SWj-aQ-yII" firstAttribute="top" secondItem="Sp5-Mv-rwK" secondAttribute="bottom" constant="10" id="Hd2-Qb-abf"/>
+                            <constraint firstItem="SWj-aQ-yII" firstAttribute="leading" secondItem="SKy-v5-qiv" secondAttribute="leading" constant="20" id="vBY-dE-Jkx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="R4X-ns-L1H"/>
                 </viewController>
@@ -306,7 +312,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="OrQ-vV-CYw" kind="push" id="VhG-mJ-Usy"/>
+                                    <segue destination="OrQ-vV-CYw" kind="push" identifier="editList" id="VhG-mJ-Usy"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -398,7 +404,13 @@ EEFkZA
 </string>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="Add:" destination="OrQ-vV-CYw" eventType="touchUpInside" id="0bO-3Y-0My"/>
+                                </connections>
                             </button>
+                            <connections>
+                                <action selector="ADd:" destination="OrQ-vV-CYw" id="I00-UA-qgJ"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -609,11 +621,11 @@ EEFkZA
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="drugCellIdentifier" id="oCx-QD-j4k">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="drugCellIdentifier" id="oCx-QD-j4k">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oCx-QD-j4k" id="Uck-ls-jZu">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>

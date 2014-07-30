@@ -29,6 +29,7 @@
         [fcAlert show];
         
     }
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
 

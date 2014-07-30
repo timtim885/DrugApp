@@ -81,7 +81,10 @@
     self.commonPurposeField.text = @"";
     self.dosingField.text = @"";
     self.keyPointField.text = @"";
+    
+    [self.navigationController popViewControllerAnimated:YES];
     }
+    
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
